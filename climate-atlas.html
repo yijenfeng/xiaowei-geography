@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>氣候圖速查｜筱葳學測地理</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>[hidden]{display:none!important}</style>
+<style>
+  /* Layout: single reading column, PART sections in sequence, English passages set apart as "answer sheet" panels */
+  :root{
+    --bg:#F1F5F9;
+    --surface:#FFFFFF;
+    --surface-2:#E5ECF3;
+    --ink:#1B2733;
+    --ink-muted:#566676;
+    --line:#C9D6E3;
+    --accent:#2B6A99;
+    --accent-ink:#FFFFFF;
+    --accent-soft:#DCE9F4;
+    --amber:#E0973C;  --amber-ink:#3A2306;
+    --teal:#4E9C8C;   --teal-ink:#0B241F;
+    --bad:#B5483B;    --bad-soft:#F6E1DD;
+    --hl-ts:#D3E6F3;  --hl-sup:#DCE8F5;  --hl-ex:#F7E3C6;  --hl-cs:#E9DDF2;
+    --grid-line:rgba(43,106,153,0.07);
+    --shadow:0 1px 2px rgba(28,42,36,0.06), 0 8px 24px rgba(28,42,36,0.05);
+    --f-display:'Noto Serif TC','Songti TC','PMingLiU',serif;
+    --f-body:'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif;
+    --f-en:'Source Serif 4','Georgia','Times New Roman',serif;
+    --f-mono:'JetBrains Mono','Cascadia Code',ui-monospace,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0E1620; --surface:#15212D; --surface-2:#1A2836; --ink:#E5ECF3; --ink-muted:#93A4B6;
+      --line:#2A3A4C; --accent:#86BCE6; --accent-ink:#0B1A12; --accent-soft:#1B3248;
+      --amber:#C97E2E; --amber-ink:#2A1A05; --teal:#3E8776; --teal-ink:#E7F5F1;
+      --bad:#E48A7D; --bad-soft:#3A201C;
+      --hl-ts:#1F3D55; --hl-sup:#22334A; --hl-ex:#4A3519; --hl-cs:#3A2A48;
+      --grid-line:rgba(134,188,230,0.07);
+      --shadow:0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0E1620; --surface:#15212D; --surface-2:#1A2836; --ink:#E5ECF3; --ink-muted:#93A4B6;
+    --line:#2A3A4C; --accent:#86BCE6; --accent-ink:#0B1A12; --accent-soft:#1B3248;
+    --amber:#C97E2E; --amber-ink:#2A1A05; --teal:#3E8776; --teal-ink:#E7F5F1;
+    --bad:#E48A7D; --bad-soft:#3A201C;
+    --hl-ts:#1F3D55; --hl-sup:#22334A; --hl-ex:#4A3519; --hl-cs:#3A2A48;
+    --grid-line:rgba(134,188,230,0.07);
+    --shadow:0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+    color-scheme:dark;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:
+      repeating-linear-gradient(0deg, var(--grid-line) 0 1px, transparent 1px 32px),
+      repeating-linear-gradient(90deg, var(--grid-line) 0 1px, transparent 1px 32px),
+      var(--bg);
+    color:var(--ink);
+    font-family:var(--f-body);
+    font-size:17px;
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  @media (prefers-reduced-motion: reduce){ *{ scroll-behavior:auto !important; transition:none !important; } }
+  h1,h2,h3{ font-family:var(--f-display); font-weight:600; text-wrap:balance; margin:0; color:var(--ink); }
+  a{ color:var(--accent); }
+  p{ margin:0; }
+  :focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+  .mono{ font-family:var(--f-mono); font-variant-numeric:tabular-nums; }
+
+  .page{ max-width:780px; margin:0 auto; padding-inline:1.25rem; padding-block:0 5rem; }
+
+  .back{ display:inline-block; margin-top:1.6rem; font-size:0.85rem; color:var(--ink-muted); text-decoration:none; }
+  .back:hover{ color:var(--accent); }
+
+  .hero{ padding-block:2rem 1.6rem; display:grid; gap:0.9rem; }
+  .eyebrow{
+    justify-self:start;
+    font-family:var(--f-mono); font-size:0.78rem; letter-spacing:0.06em;
+    color:var(--accent); background:var(--accent-soft); border:1px solid var(--line);
+    padding:0.3rem 0.7rem; border-radius:4px;
+  }
+  .hero h1{ font-size:clamp(1.9rem,5vw,2.5rem); line-height:1.25; }
+  .hero .sub{ color:var(--ink-muted); font-size:1.03rem; max-width:640px; }
+
+  .lede{
+    background:var(--surface); border:1px solid var(--line); border-radius:10px;
+    padding:1.1rem 1.3rem; box-shadow:var(--shadow); display:grid; gap:0.9rem;
+  }
+  .toc{ display:flex; flex-wrap:wrap; gap:0.5rem; padding:0; margin:0; list-style:none; }
+  .toc a{
+    display:inline-flex; gap:0.45rem; align-items:center; text-decoration:none;
+    font-size:0.88rem; color:var(--ink); background:var(--surface-2); border:1px solid var(--line);
+    padding:0.25rem 0.75rem; border-radius:999px;
+  }
+  .toc a:hover{ border-color:var(--accent); color:var(--accent); }
+  .toc b{ font-family:var(--f-mono); color:var(--accent); font-weight:700; }
+
+  section.part{ margin-top:3.2rem; display:grid; gap:1.1rem; }
+  .part-kicker{ font-family:var(--f-mono); font-size:0.78rem; letter-spacing:0.08em; color:var(--accent); }
+  .part h2{ font-size:1.55rem; line-height:1.35; }
+  .part h3{ font-size:1.08rem; margin-top:0.4rem; }
+
+  .step{ display:grid; gap:0.5rem; }
+  .step-tag{
+    justify-self:start; font-family:var(--f-mono); font-size:0.72rem; font-weight:700;
+    padding:0.1rem 0.55rem; border-radius:4px; background:var(--surface-2); color:var(--ink-muted); border:1px solid var(--line);
+  }
+  .step-tag.rule{ background:var(--accent); color:var(--accent-ink); border-color:var(--accent); }
+
+  .prompt{
+    background:var(--surface); border:1px solid var(--line); border-left:4px solid var(--amber);
+    border-radius:6px; padding:0.9rem 1.1rem; font-size:0.95rem;
+  }
+  .prompt .label{ font-family:var(--f-mono); font-size:0.72rem; color:var(--amber); font-weight:700; letter-spacing:0.05em; display:block; margin-bottom:0.2rem; }
+
+  .sheet{
+    background:var(--surface); border:1px solid var(--line); border-radius:8px;
+    padding:1rem 1.2rem; box-shadow:var(--shadow);
+    font-family:var(--f-en); font-size:1.06rem; line-height:1.85;
+  }
+  .sheet p + p{ margin-top:0.8rem; }
+  .sheet-head{
+    display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:0.3rem 1rem;
+    font-family:var(--f-mono); font-size:0.75rem; color:var(--ink-muted); margin-bottom:0.5rem;
+  }
+  .sheet.weak{ border-color:var(--bad); }
+  .sheet .err{ text-decoration:underline wavy var(--bad); text-underline-offset:4px; }
+
+  .compare{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:0.9rem; }
+  .compare > *{ min-width:0; }
+
+  .note{
+    background:var(--accent-soft); border:1px solid var(--line); border-radius:8px;
+    padding:0.8rem 1rem; font-size:0.93rem;
+  }
+
+  .table-wrap{ overflow-x:auto; border:1px solid var(--line); border-radius:8px; background:var(--surface); }
+  table{ border-collapse:collapse; width:100%; font-size:0.92rem; min-width:520px; }
+  th,td{ text-align:left; padding:0.6rem 0.85rem; border-bottom:1px solid var(--line); vertical-align:top; }
+  th{ background:var(--surface-2); font-weight:700; font-size:0.85rem; }
+  tr:last-child td{ border-bottom:none; }
+  td.en{ font-family:var(--f-en); font-size:1rem; }
+
+  /* score band bar, drawn to scale 0–20 */
+  .bands{ display:grid; gap:0.4rem; }
+  .band-bar{ display:flex; gap:2px; border-radius:6px; overflow:hidden; height:40px; }
+  .band-bar div{ display:flex; flex-direction:column; align-items:center; justify-content:center; line-height:1.15; font-size:0.78rem; font-weight:700; }
+  .band-bar small{ font-family:var(--f-mono); font-weight:400; font-size:0.68rem; }
+  .b0{ background:var(--bad-soft); color:var(--bad); }
+  .b1{ background:var(--surface-2); color:var(--ink-muted); }
+  .b2{ background:var(--hl-sup); color:var(--ink); }
+  .b3{ background:var(--hl-ts); color:var(--ink); }
+  .b4{ background:var(--accent); color:var(--accent-ink); }
+  .band-scale{ display:flex; justify-content:space-between; font-family:var(--f-mono); font-size:0.7rem; color:var(--ink-muted); }
+
+  /* paragraph anatomy */
+  .anatomy-ctrl{ display:flex; flex-wrap:wrap; gap:0.5rem 1rem; align-items:center; }
+  button.toggle{
+    font:inherit; font-size:0.88rem; cursor:pointer;
+    background:var(--accent); color:var(--accent-ink); border:none; border-radius:6px; padding:0.4rem 0.9rem;
+  }
+  button.toggle[aria-pressed="false"]{ background:var(--surface); color:var(--accent); border:1px solid var(--accent); }
+  .key{ display:flex; flex-wrap:wrap; gap:0.3rem 0.9rem; font-size:0.82rem; color:var(--ink-muted); }
+  .key span{ display:inline-flex; align-items:center; gap:0.35rem; }
+  .key i{ width:12px; height:12px; border-radius:3px; display:inline-block; }
+  .anatomy.on .ts{ background:var(--hl-ts); }
+  .anatomy.on .sup{ background:var(--hl-sup); }
+  .anatomy.on .ex{ background:var(--hl-ex); }
+  .anatomy.on .cs{ background:var(--hl-cs); }
+  .anatomy .ts,.anatomy .sup,.anatomy .ex,.anatomy .cs{ border-radius:3px; padding:0 2px; transition:background .2s ease; box-decoration-break:clone; -webkit-box-decoration-break:clone; }
+  .anatomy .tr{ font-weight:600; }
+  .anatomy.on .tr{ color:var(--accent); }
+
+  .skeleton{ display:grid; gap:0.4rem; counter-reset:sk; }
+  .skeleton div{
+    display:grid; grid-template-columns:7.5rem 1fr; gap:0.8rem; align-items:baseline;
+    padding:0.55rem 0.9rem; border-radius:6px; font-size:0.92rem;
+  }
+  .skeleton div > *{ min-width:0; }
+  .skeleton b{ font-size:0.86rem; }
+  @media (max-width:480px){ .skeleton div{ grid-template-columns:1fr; gap:0.1rem; } }
+
+  ul.clean{ margin:0; padding-left:1.2rem; display:grid; gap:0.3rem; }
+
+  .timeline{ display:flex; gap:2px; border-radius:6px; overflow:hidden; height:46px; }
+  .timeline div{ display:flex; flex-direction:column; justify-content:center; align-items:center; font-size:0.78rem; font-weight:700; line-height:1.15; text-align:center; padding:0 0.2rem; }
+  .timeline small{ font-family:var(--f-mono); font-weight:400; font-size:0.68rem; }
+
+  .checklist{ display:grid; gap:0.35rem; }
+  .checklist label{ display:flex; gap:0.6rem; align-items:flex-start; font-size:0.93rem; cursor:pointer; }
+  .checklist input{ margin-top:0.45rem; accent-color:var(--accent); }
+
+  /* practice */
+  .practice{ margin-top:3.2rem; display:grid; gap:1rem; }
+  .qcard{ background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:1rem 1.2rem; display:grid; gap:0.6rem; }
+  .qhead{ display:flex; gap:0.6rem; align-items:baseline; }
+  .qnum{ font-family:var(--f-mono); font-weight:700; color:var(--accent); flex:none; }
+  .qcard .en{ font-family:var(--f-en); font-size:1.02rem; }
+  .opts{ margin:0; padding-left:1.4rem; font-family:var(--f-en); font-size:1rem; display:grid; gap:0.15rem; }
+  details{ border-top:1px dashed var(--line); padding-top:0.5rem; }
+  summary{ cursor:pointer; color:var(--accent); font-size:0.88rem; font-weight:500; }
+  details .ans{ margin-top:0.5rem; font-size:0.93rem; }
+
+  /* draft box */
+  .draft{ display:grid; gap:0.6rem; }
+  textarea{
+    width:100%; min-height:260px; resize:vertical;
+    font-family:var(--f-en); font-size:1.02rem; line-height:1.75;
+    background:var(--surface); color:var(--ink); border:1px solid var(--line); border-radius:8px; padding:0.9rem 1rem;
+  }
+  textarea:focus{ outline:2px solid var(--accent); outline-offset:1px; }
+  .meters{ display:flex; flex-wrap:wrap; gap:0.5rem; }
+  .meter{ font-family:var(--f-mono); font-size:0.8rem; padding:0.25rem 0.7rem; border-radius:999px; border:1px solid var(--line); background:var(--surface-2); color:var(--ink-muted); }
+  .meter.ok{ background:var(--accent); color:var(--accent-ink); border-color:var(--accent); }
+  .meter.warn{ background:var(--amber); color:var(--amber-ink); border-color:var(--amber); }
+
+  footer{ margin-top:3rem; padding-top:1.5rem; border-top:1px solid var(--line); color:var(--ink-muted); font-size:0.85rem; display:grid; gap:0.4rem; }
+  footer .id{ font-family:var(--f-mono); font-size:0.8rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem; }
+</style>
+<style>
+  .wt td.zh{ transition:filter .2s ease, opacity .2s ease; }
+  .masked td.zh{ filter:blur(6px); opacity:.55; user-select:none; }
+  .masked td.zh:hover,.masked td.zh:focus{ filter:none; opacity:1; }
+  .tools{ display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; font-size:0.85rem; color:var(--ink-muted); }
+  .pair{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:0.8rem; }
+  .pair > *{ min-width:0; }
+  .ex-line{ font-family:var(--f-en); font-size:1.02rem; }
+  .ex-line + .ex-line{ margin-top:0.3rem; }
+  .ok{ color:var(--accent); font-weight:600; }
+  .no{ color:var(--bad); text-decoration:line-through; text-decoration-thickness:1px; }
+  .hl{ background:var(--hl-ex); border-radius:3px; padding:0 2px; }
+  .hl2{ background:var(--hl-ts); border-radius:3px; padding:0 2px; }
+  .hl3{ background:var(--hl-sup); border-radius:3px; padding:0 2px; }
+  .formula{ background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:0.8rem 1.1rem; font-family:var(--f-mono); font-size:0.9rem; line-height:1.9; overflow-x:auto; }
+</style>
+<style>
+  .opt-list{ display:grid; gap:0.4rem; }
+  .opt-btn{
+    display:block; width:100%; text-align:left; cursor:pointer;
+    font-family:var(--f-en); font-size:1rem; line-height:1.5; color:var(--ink);
+    background:var(--surface-2); border:1px solid var(--line); border-radius:6px; padding:0.45rem 0.8rem;
+  }
+  .opt-btn:hover{ border-color:var(--accent); }
+  .opt-btn.right{ background:var(--accent); color:var(--accent-ink); border-color:var(--accent); }
+  .opt-btn.wrong{ background:var(--bad-soft); color:var(--bad); border-color:var(--bad); }
+  .opt-btn:disabled{ cursor:default; }
+  .scorebar{ display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; font-size:0.9rem; color:var(--ink-muted); }
+  .scorebar .meter{ font-size:0.85rem; }
+  .passage{ background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:1rem 1.2rem; font-family:var(--f-en); font-size:1.04rem; line-height:1.9; box-shadow:var(--shadow); }
+  .passage p + p{ margin-top:0.7rem; }
+  .blank{ font-family:var(--f-mono); font-size:0.85rem; font-weight:700; color:var(--accent); background:var(--accent-soft); border-radius:4px; padding:0 0.35rem; }
+  .optgrid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:0.4rem; font-family:var(--f-en); }
+  .optgrid span{ background:var(--surface-2); border:1px solid var(--line); border-radius:6px; padding:0.3rem 0.6rem; }
+  .fill{ width:100%; font:inherit; font-family:var(--f-en); background:var(--surface); color:var(--ink); border:1px solid var(--line); border-radius:6px; padding:0.4rem 0.6rem; }
+  .fill:focus{ outline:2px solid var(--accent); outline-offset:1px; }
+  .panels{ display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:0.6rem; }
+  .panel{ background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:0.7rem 0.8rem; font-size:0.9rem; }
+  .panel b{ font-family:var(--f-mono); color:var(--accent); display:block; font-size:0.78rem; }
+  .log-form{ display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:0.6rem; align-items:end; }
+  .log-form label{ display:grid; gap:0.2rem; font-size:0.82rem; color:var(--ink-muted); }
+  select.fill{ appearance:auto; }
+</style>
+<style>
+  .chk-row{ display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; }
+  textarea.ans-in{ min-height:0; resize:vertical; font-size:1rem; line-height:1.6; padding:0.5rem 0.7rem; }
+  .verdict{ font-size:0.9rem; display:grid; gap:0.35rem; }
+  .verdict:empty{ display:none; }
+  .vd{ display:inline-block; font-weight:700; font-size:0.85rem; padding:0.1rem 0.6rem; border-radius:999px; }
+  .vd.good{ background:var(--accent); color:var(--accent-ink); }
+  .vd.bad{ background:var(--bad-soft); color:var(--bad); }
+  .vd.warn{ background:var(--surface-2); color:var(--ink-muted); }
+  .dx{ display:grid; gap:0.25rem; font-family:var(--f-en); font-size:1rem; background:var(--surface-2); border-radius:6px; padding:0.5rem 0.75rem; }
+  .dx b{ font-family:var(--f-body); font-size:0.75rem; color:var(--ink-muted); display:inline-block; min-width:4.5rem; }
+  .dx-bad{ color:var(--bad); text-decoration:underline wavy var(--bad); text-underline-offset:3px; }
+  .dx-good{ color:var(--accent); font-weight:600; text-decoration:underline; text-underline-offset:3px; }
+  .dx-note{ font-size:0.8rem; color:var(--ink-muted); }
+  td .verdict{ margin-top:0.3rem; }
+</style>
+<style>
+  /* history additions: vertical chronology, primary-source boxes */
+  .chron{ list-style:none; margin:0.8rem 0 0; padding:0 0 0 0.2rem; display:grid; gap:0; }
+  .chron li{ display:grid; grid-template-columns:5.6rem 1fr; gap:0.9rem; position:relative; padding:0.35rem 0 0.55rem; }
+  .chron li > *{ min-width:0; }
+  .chron li::before{ content:''; position:absolute; left:6.05rem; top:0; bottom:0; width:2px; background:var(--line); }
+  .chron li::after{ content:''; position:absolute; left:calc(6.05rem - 4px); top:0.85rem; width:10px; height:10px; border-radius:50%; background:var(--surface); border:2px solid var(--accent); }
+  .chron li.turn::after{ background:var(--accent); }
+  .chron .yr{ font-family:var(--f-mono); font-variant-numeric:tabular-nums; font-size:0.82rem; font-weight:700; color:var(--accent); text-align:right; padding-top:0.15rem; }
+  .chron .ev{ padding-left:0.9rem; font-size:0.95rem; line-height:1.65; }
+  .chron .ev small{ display:block; color:var(--ink-muted); font-size:0.82rem; }
+  @media (max-width:480px){
+    .chron li{ grid-template-columns:4.4rem 1fr; gap:0.6rem; }
+    .chron li::before{ left:4.75rem; } .chron li::after{ left:calc(4.75rem - 4px); }
+  }
+  .src{ background:var(--surface-2); border:1px solid var(--line); border-left:4px solid var(--amber); border-radius:6px; padding:0.7rem 1rem; font-family:var(--f-display); font-size:1rem; line-height:1.85; margin:0; }
+  .src cite{ display:block; font-style:normal; font-family:var(--f-body); font-size:0.78rem; color:var(--ink-muted); margin-top:0.3rem; }
+  .qcard .qtext{ margin:0; }
+  textarea.fill{ font-family:var(--f-body); }
+  .kwtag{ font-family:var(--f-mono); font-size:0.75rem; background:var(--accent-soft); color:var(--accent); border:1px solid var(--line); border-radius:4px; padding:0.05rem 0.4rem; white-space:nowrap; }
+</style>
+
+<style>
+  /* geography additions */
+  .chain .yr{ font-family:var(--f-body); font-size:0.8rem; }
+  .fig{ background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:0.8rem 1rem; box-shadow:var(--shadow); display:grid; gap:0.4rem; }
+  .fig svg{ width:100%; height:auto; display:block; }
+  .fig figcaption{ font-size:0.82rem; color:var(--ink-muted); }
+  .fig text{ font-family:var(--f-body); }
+  .twocol{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:0.8rem; }
+  .twocol > *{ min-width:0; }
+  .card-mini{ background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:0.7rem 0.9rem; font-size:0.92rem; }
+  .card-mini b{ display:block; font-family:var(--f-display); font-size:1rem; margin-bottom:0.2rem; }
+</style>
+<style>
+  .clim-q{ font-family:var(--f-mono); font-size:0.75rem; color:var(--accent); font-weight:700; }
+  .masked .clim-a{ filter:blur(6px); cursor:pointer; user-select:none; }
+  .masked .clim .shown .clim-a, .masked .clim-a.shown{ filter:none; }
+  .clim figcaption{ line-height:1.6; }
+</style></head>
+<body>
+<div class="page">
+<a class="back" href="index.html">← 回到地理學習地圖</a>
+<header class="hero">
+  <span class="eyebrow">速查・氣候圖</span>
+  <h1>氣候圖速查</h1>
+  <p class="sub">每一種氣候的「長相」。紅線是月均溫、藍柱是月雨量。先自己判讀，再打開答案；考前一週每天看一次。</p>
+</header>
+<div class="lede"><p>這一節回答一個問題：「看到一張氣候圖，30 秒內怎麼判斷是哪一種氣候？」</p><ul class="toc"><li><a href="#p1"><b>1</b>判讀口訣</a></li><li><a href="#p2"><b>2</b>十一張氣候圖</a></li></ul></div>
+<section class="part" id="p1"><span class="part-kicker">PART 1 ・ 判讀口訣</span><h2>三個問題，依序回答</h2><ol class="chron chain"><li class="turn"><span class="yr">① 最冷月</span><span class="ev">最冷月 > 18°C → 熱帶；最暖月 < 10°C → 寒帶；其他 → 溫帶或乾燥<small>年雨量很少（多數月份幾乎沒有雨柱）→ 先想沙漠</small></span></li><li><span class="yr">② 半球</span><span class="ev">7 月最熱 → 北半球；1 月最熱 → 南半球</span></li><li class="turn"><span class="yr">③ 雨季</span><span class="ev">全年有雨／夏雨冬乾／夏乾冬雨<small>夏雨冬乾 → 季風或莽原；夏乾冬雨 → 地中海型</small></span></li></ol><div class="note"><b>注意單位：</b>本頁雨量軸上限 400 mm，超過的月份在柱頂標出數字。圖為依典型氣候型態繪製的教學示意，不是特定測站的實測資料。</div></section><section class="part" id="p2"><span class="part-kicker">PART 2 ・ 十一張氣候圖</span><h2>先遮住答案自我測驗</h2><div class="tools"><button class="toggle" type="button" id="maskBtn" aria-pressed="false">遮住答案</button><span>遮住後，點一下圖下方模糊的文字即可看答案。</span></div><div class="twocol" id="climGrid"><figure class="fig clim" style="margin:0"><div class="clim-q">圖 1</div><svg viewBox="0 0 330 210" role="img" aria-label="氣候圖"><line x1="34" x2="296" y1="180.0" y2="180.0" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="183.0" font-size="9" text-anchor="end" fill="var(--ink-muted)">-30</text><line x1="34" x2="296" y1="154.2" y2="154.2" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="157.2" font-size="9" text-anchor="end" fill="var(--ink-muted)">-20</text><line x1="34" x2="296" y1="128.3" y2="128.3" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="131.3" font-size="9" text-anchor="end" fill="var(--ink-muted)">-10</text><line x1="34" x2="296" y1="102.5" y2="102.5" stroke="var(--line)" stroke-width="1.4"/><text x="30" y="105.5" font-size="9" text-anchor="end" fill="var(--ink-muted)">0</text><line x1="34" x2="296" y1="76.6" y2="76.6" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="79.6" font-size="9" text-anchor="end" fill="var(--ink-muted)">10</text><line x1="34" x2="296" y1="50.8" y2="50.8" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="53.8" font-size="9" text-anchor="end" fill="var(--ink-muted)">20</text><line x1="34" x2="296" y1="24.9" y2="24.9" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="27.9" font-size="9" text-anchor="end" fill="var(--ink-muted)">30</text><text x="300" y="183.0" font-size="9" fill="var(--ink-muted)">0</text><text x="300" y="141.0" font-size="9" fill="var(--ink-muted)">100</text><text x="300" y="99.0" font-size="9" fill="var(--ink-muted)">200</text><text x="300" y="57.0" font-size="9" fill="var(--ink-muted)">300</text><text x="300" y="15.0" font-size="9" fill="var(--ink-muted)">400</text><rect x="37.3" y="79.2" width="15.3" height="100.8" fill="var(--teal)" opacity="0.75"/><rect x="59.1" y="112.8" width="15.3" height="67.2" fill="var(--teal)" opacity="0.75"/><rect x="80.9" y="104.4" width="15.3" height="75.6" fill="var(--teal)" opacity="0.75"/><rect x="102.8" y="104.4" width="15.3" height="75.6" fill="var(--teal)" opacity="0.75"/><rect x="124.6" y="108.6" width="15.3" height="71.4" fill="var(--teal)" opacity="0.75"/><rect x="146.4" y="112.8" width="15.3" height="67.2" fill="var(--teal)" opacity="0.75"/><rect x="168.3" y="112.8" width="15.3" height="67.2" fill="var(--teal)" opacity="0.75"/><rect x="190.1" y="108.6" width="15.3" height="71.4" fill="var(--teal)" opacity="0.75"/><rect x="211.9" y="108.6" width="15.3" height="71.4" fill="var(--teal)" opacity="0.75"/><rect x="233.8" y="100.2" width="15.3" height="79.8" fill="var(--teal)" opacity="0.75"/><rect x="255.6" y="70.8" width="15.3" height="109.2" fill="var(--teal)" opacity="0.75"/><rect x="277.4" y="58.2" width="15.3" height="121.8" fill="var(--teal)" opacity="0.75"/><polyline points="44.9,32.7 66.8,32.7 88.6,30.1 110.4,30.1 132.2,30.1 154.1,30.1 175.9,30.1 197.7,30.1 219.6,32.7 241.4,32.7 263.2,32.7 285.1,32.7" fill="none" stroke="var(--bad)" stroke-width="2"/><circle cx="44.9" cy="32.7" r="2.2" fill="var(--bad)"/><circle cx="66.8" cy="32.7" r="2.2" fill="var(--bad)"/><circle cx="88.6" cy="30.1" r="2.2" fill="var(--bad)"/><circle cx="110.4" cy="30.1" r="2.2" fill="var(--bad)"/><circle cx="132.2" cy="30.1" r="2.2" fill="var(--bad)"/><circle cx="154.1" cy="30.1" r="2.2" fill="var(--bad)"/><circle cx="175.9" cy="30.1" r="2.2" fill="var(--bad)"/><circle cx="197.7" cy="30.1" r="2.2" fill="var(--bad)"/><circle cx="219.6" cy="32.7" r="2.2" fill="var(--bad)"/><circle cx="241.4" cy="32.7" r="2.2" fill="var(--bad)"/><circle cx="263.2" cy="32.7" r="2.2" fill="var(--bad)"/><circle cx="285.1" cy="32.7" r="2.2" fill="var(--bad)"/><text x="44.9" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">1</text><text x="66.8" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">2</text><text x="88.6" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">3</text><text x="110.4" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">4</text><text x="132.2" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">5</text><text x="154.1" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">6</text><text x="175.9" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">7</text><text x="197.7" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">8</text><text x="219.6" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">9</text><text x="241.4" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">10</text><text x="263.2" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">11</text><text x="285.1" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">12</text><text x="4" y="16" font-size="9" fill="var(--bad)">°C</text><text x="328" y="16" font-size="9" text-anchor="end" fill="var(--teal)">mm</text><text x="165" y="208" font-size="9" text-anchor="middle" fill="var(--ink-muted)">月</text></svg><figcaption><span class="clim-a"><b>熱帶雨林</b>（類似新加坡）</span><br><span class="mono">年溫差 1°C・年雨量約 2330 mm</span><br>最冷月 > 18°C，全年多雨、沒有乾季</figcaption></figure><figure class="fig clim" style="margin:0"><div class="clim-q">圖 2</div><svg viewBox="0 0 330 210" role="img" aria-label="氣候圖"><line x1="34" x2="296" y1="180.0" y2="180.0" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="183.0" font-size="9" text-anchor="end" fill="var(--ink-muted)">-30</text><line x1="34" x2="296" y1="154.2" y2="154.2" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="157.2" font-size="9" text-anchor="end" fill="var(--ink-muted)">-20</text><line x1="34" x2="296" y1="128.3" y2="128.3" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="131.3" font-size="9" text-anchor="end" fill="var(--ink-muted)">-10</text><line x1="34" x2="296" y1="102.5" y2="102.5" stroke="var(--line)" stroke-width="1.4"/><text x="30" y="105.5" font-size="9" text-anchor="end" fill="var(--ink-muted)">0</text><line x1="34" x2="296" y1="76.6" y2="76.6" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="79.6" font-size="9" text-anchor="end" fill="var(--ink-muted)">10</text><line x1="34" x2="296" y1="50.8" y2="50.8" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="53.8" font-size="9" text-anchor="end" fill="var(--ink-muted)">20</text><line x1="34" x2="296" y1="24.9" y2="24.9" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="27.9" font-size="9" text-anchor="end" fill="var(--ink-muted)">30</text><text x="300" y="183.0" font-size="9" fill="var(--ink-muted)">0</text><text x="300" y="141.0" font-size="9" fill="var(--ink-muted)">100</text><text x="300" y="99.0" font-size="9" fill="var(--ink-muted)">200</text><text x="300" y="57.0" font-size="9" fill="var(--ink-muted)">300</text><text x="300" y="15.0" font-size="9" fill="var(--ink-muted)">400</text><rect x="37.3" y="177.9" width="15.3" height="2.1" fill="var(--teal)" opacity="0.75"/><rect x="59.1" y="177.9" width="15.3" height="2.1" fill="var(--teal)" opacity="0.75"/><rect x="80.9" y="173.7" width="15.3" height="6.3" fill="var(--teal)" opacity="0.75"/><rect x="102.8" y="163.2" width="15.3" height="16.8" fill="var(--teal)" opacity="0.75"/><rect x="124.6" y="138.0" width="15.3" height="42.0" fill="var(--teal)" opacity="0.75"/><rect x="146.4" y="117.0" width="15.3" height="63.0" fill="var(--teal)" opacity="0.75"/><rect x="168.3" y="96.0" width="15.3" height="84.0" fill="var(--teal)" opacity="0.75"/><rect x="190.1" y="87.6" width="15.3" height="92.4" fill="var(--teal)" opacity="0.75"/><rect x="211.9" y="117.0" width="15.3" height="63.0" fill="var(--teal)" opacity="0.75"/><rect x="233.8" y="154.8" width="15.3" height="25.2" fill="var(--teal)" opacity="0.75"/><rect x="255.6" y="175.8" width="15.3" height="4.2" fill="var(--teal)" opacity="0.75"/><rect x="277.4" y="177.9" width="15.3" height="2.1" fill="var(--teal)" opacity="0.75"/><polyline points="44.9,37.8 66.8,35.3 88.6,30.1 110.4,27.5 132.2,30.1 154.1,32.7 175.9,35.3 197.7,35.3 219.6,32.7 241.4,32.7 263.2,35.3 285.1,37.8" fill="none" stroke="var(--bad)" stroke-width="2"/><circle cx="44.9" cy="37.8" r="2.2" fill="var(--bad)"/><circle cx="66.8" cy="35.3" r="2.2" fill="var(--bad)"/><circle cx="88.6" cy="30.1" r="2.2" fill="var(--bad)"/><circle cx="110.4" cy="27.5" r="2.2" fill="var(--bad)"/><circle cx="132.2" cy="30.1" r="2.2" fill="var(--bad)"/><circle cx="154.1" cy="32.7" r="2.2" fill="var(--bad)"/><circle cx="175.9" cy="35.3" r="2.2" fill="var(--bad)"/><circle cx="197.7" cy="35.3" r="2.2" fill="var(--bad)"/><circle cx="219.6" cy="32.7" r="2.2" fill="var(--bad)"/><circle cx="241.4" cy="32.7" r="2.2" fill="var(--bad)"/><circle cx="263.2" cy="35.3" r="2.2" fill="var(--bad)"/><circle cx="285.1" cy="37.8" r="2.2" fill="var(--bad)"/><text x="44.9" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">1</text><text x="66.8" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">2</text><text x="88.6" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">3</text><text x="110.4" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">4</text><text x="132.2" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">5</text><text x="154.1" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">6</text><text x="175.9" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">7</text><text x="197.7" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">8</text><text x="219.6" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">9</text><text x="241.4" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">10</text><text x="263.2" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">11</text><text x="285.1" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">12</text><text x="4" y="16" font-size="9" fill="var(--bad)">°C</text><text x="328" y="16" font-size="9" text-anchor="end" fill="var(--teal)">mm</text><text x="165" y="208" font-size="9" text-anchor="middle" fill="var(--ink-muted)">月</text></svg><figcaption><span class="clim-a"><b>熱帶莽原</b>（北半球示意）</span><br><span class="mono">年溫差 4°C・年雨量約 960 mm</span><br>全年高溫，夏雨冬乾，乾季明顯</figcaption></figure><figure class="fig clim" style="margin:0"><div class="clim-q">圖 3</div><svg viewBox="0 0 330 210" role="img" aria-label="氣候圖"><line x1="34" x2="296" y1="180.0" y2="180.0" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="183.0" font-size="9" text-anchor="end" fill="var(--ink-muted)">-30</text><line x1="34" x2="296" y1="154.2" y2="154.2" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="157.2" font-size="9" text-anchor="end" fill="var(--ink-muted)">-20</text><line x1="34" x2="296" y1="128.3" y2="128.3" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="131.3" font-size="9" text-anchor="end" fill="var(--ink-muted)">-10</text><line x1="34" x2="296" y1="102.5" y2="102.5" stroke="var(--line)" stroke-width="1.4"/><text x="30" y="105.5" font-size="9" text-anchor="end" fill="var(--ink-muted)">0</text><line x1="34" x2="296" y1="76.6" y2="76.6" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="79.6" font-size="9" text-anchor="end" fill="var(--ink-muted)">10</text><line x1="34" x2="296" y1="50.8" y2="50.8" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="53.8" font-size="9" text-anchor="end" fill="var(--ink-muted)">20</text><line x1="34" x2="296" y1="24.9" y2="24.9" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="27.9" font-size="9" text-anchor="end" fill="var(--ink-muted)">30</text><text x="300" y="183.0" font-size="9" fill="var(--ink-muted)">0</text><text x="300" y="141.0" font-size="9" fill="var(--ink-muted)">100</text><text x="300" y="99.0" font-size="9" fill="var(--ink-muted)">200</text><text x="300" y="57.0" font-size="9" fill="var(--ink-muted)">300</text><text x="300" y="15.0" font-size="9" fill="var(--ink-muted)">400</text><rect x="37.3" y="179.6" width="15.3" height="0.4" fill="var(--teal)" opacity="0.75"/><rect x="59.1" y="179.6" width="15.3" height="0.4" fill="var(--teal)" opacity="0.75"/><rect x="80.9" y="180.0" width="15.3" height="0.0" fill="var(--teal)" opacity="0.75"/><rect x="102.8" y="179.6" width="15.3" height="0.4" fill="var(--teal)" opacity="0.75"/><rect x="124.6" y="173.7" width="15.3" height="6.3" fill="var(--teal)" opacity="0.75"/><rect x="146.4" y="12.0" width="15.3" height="168.0" fill="var(--teal)" opacity="0.75"/><text x="154.1" y="20.0" font-size="8" text-anchor="middle" fill="var(--teal)">500</text><rect x="168.3" y="12.0" width="15.3" height="168.0" fill="var(--teal)" opacity="0.75"/><text x="175.9" y="20.0" font-size="8" text-anchor="middle" fill="var(--teal)">640</text><rect x="190.1" y="20.4" width="15.3" height="159.6" fill="var(--teal)" opacity="0.75"/><rect x="211.9" y="62.4" width="15.3" height="117.6" fill="var(--teal)" opacity="0.75"/><rect x="233.8" y="150.6" width="15.3" height="29.4" fill="var(--teal)" opacity="0.75"/><rect x="255.6" y="173.7" width="15.3" height="6.3" fill="var(--teal)" opacity="0.75"/><rect x="277.4" y="178.7" width="15.3" height="1.3" fill="var(--teal)" opacity="0.75"/><polyline points="44.9,40.4 66.8,37.8 88.6,32.7 110.4,27.5 132.2,24.9 154.1,27.5 175.9,32.7 197.7,32.7 219.6,32.7 241.4,30.1 263.2,32.7 285.1,37.8" fill="none" stroke="var(--bad)" stroke-width="2"/><circle cx="44.9" cy="40.4" r="2.2" fill="var(--bad)"/><circle cx="66.8" cy="37.8" r="2.2" fill="var(--bad)"/><circle cx="88.6" cy="32.7" r="2.2" fill="var(--bad)"/><circle cx="110.4" cy="27.5" r="2.2" fill="var(--bad)"/><circle cx="132.2" cy="24.9" r="2.2" fill="var(--bad)"/><circle cx="154.1" cy="27.5" r="2.2" fill="var(--bad)"/><circle cx="175.9" cy="32.7" r="2.2" fill="var(--bad)"/><circle cx="197.7" cy="32.7" r="2.2" fill="var(--bad)"/><circle cx="219.6" cy="32.7" r="2.2" fill="var(--bad)"/><circle cx="241.4" cy="30.1" r="2.2" fill="var(--bad)"/><circle cx="263.2" cy="32.7" r="2.2" fill="var(--bad)"/><circle cx="285.1" cy="37.8" r="2.2" fill="var(--bad)"/><text x="44.9" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">1</text><text x="66.8" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">2</text><text x="88.6" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">3</text><text x="110.4" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">4</text><text x="132.2" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">5</text><text x="154.1" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">6</text><text x="175.9" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">7</text><text x="197.7" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">8</text><text x="219.6" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">9</text><text x="241.4" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">10</text><text x="263.2" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">11</text><text x="285.1" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">12</text><text x="4" y="16" font-size="9" fill="var(--bad)">°C</text><text x="328" y="16" font-size="9" text-anchor="end" fill="var(--teal)">mm</text><text x="165" y="208" font-size="9" text-anchor="middle" fill="var(--ink-muted)">月</text></svg><figcaption><span class="clim-a"><b>熱帶季風</b>（類似孟買）</span><br><span class="mono">年溫差 6°C・年雨量約 1906 mm</span><br>全年高溫，6–9 月雨量暴增</figcaption></figure><figure class="fig clim" style="margin:0"><div class="clim-q">圖 4</div><svg viewBox="0 0 330 210" role="img" aria-label="氣候圖"><line x1="34" x2="296" y1="180.0" y2="180.0" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="183.0" font-size="9" text-anchor="end" fill="var(--ink-muted)">-30</text><line x1="34" x2="296" y1="154.2" y2="154.2" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="157.2" font-size="9" text-anchor="end" fill="var(--ink-muted)">-20</text><line x1="34" x2="296" y1="128.3" y2="128.3" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="131.3" font-size="9" text-anchor="end" fill="var(--ink-muted)">-10</text><line x1="34" x2="296" y1="102.5" y2="102.5" stroke="var(--line)" stroke-width="1.4"/><text x="30" y="105.5" font-size="9" text-anchor="end" fill="var(--ink-muted)">0</text><line x1="34" x2="296" y1="76.6" y2="76.6" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="79.6" font-size="9" text-anchor="end" fill="var(--ink-muted)">10</text><line x1="34" x2="296" y1="50.8" y2="50.8" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="53.8" font-size="9" text-anchor="end" fill="var(--ink-muted)">20</text><line x1="34" x2="296" y1="24.9" y2="24.9" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="27.9" font-size="9" text-anchor="end" fill="var(--ink-muted)">30</text><text x="300" y="183.0" font-size="9" fill="var(--ink-muted)">0</text><text x="300" y="141.0" font-size="9" fill="var(--ink-muted)">100</text><text x="300" y="99.0" font-size="9" fill="var(--ink-muted)">200</text><text x="300" y="57.0" font-size="9" fill="var(--ink-muted)">300</text><text x="300" y="15.0" font-size="9" fill="var(--ink-muted)">400</text><rect x="37.3" y="177.9" width="15.3" height="2.1" fill="var(--teal)" opacity="0.75"/><rect x="59.1" y="178.3" width="15.3" height="1.7" fill="var(--teal)" opacity="0.75"/><rect x="80.9" y="178.7" width="15.3" height="1.3" fill="var(--teal)" opacity="0.75"/><rect x="102.8" y="179.6" width="15.3" height="0.4" fill="var(--teal)" opacity="0.75"/><rect x="124.6" y="180.0" width="15.3" height="0.0" fill="var(--teal)" opacity="0.75"/><rect x="146.4" y="180.0" width="15.3" height="0.0" fill="var(--teal)" opacity="0.75"/><rect x="168.3" y="180.0" width="15.3" height="0.0" fill="var(--teal)" opacity="0.75"/><rect x="190.1" y="180.0" width="15.3" height="0.0" fill="var(--teal)" opacity="0.75"/><rect x="211.9" y="180.0" width="15.3" height="0.0" fill="var(--teal)" opacity="0.75"/><rect x="233.8" y="179.6" width="15.3" height="0.4" fill="var(--teal)" opacity="0.75"/><rect x="255.6" y="178.7" width="15.3" height="1.3" fill="var(--teal)" opacity="0.75"/><rect x="277.4" y="177.9" width="15.3" height="2.1" fill="var(--teal)" opacity="0.75"/><polyline points="44.9,66.3 66.8,63.7 88.6,55.9 110.4,45.6 132.2,37.8 154.1,30.1 175.9,30.1 197.7,30.1 219.6,35.3 241.4,43.0 263.2,53.4 285.1,63.7" fill="none" stroke="var(--bad)" stroke-width="2"/><circle cx="44.9" cy="66.3" r="2.2" fill="var(--bad)"/><circle cx="66.8" cy="63.7" r="2.2" fill="var(--bad)"/><circle cx="88.6" cy="55.9" r="2.2" fill="var(--bad)"/><circle cx="110.4" cy="45.6" r="2.2" fill="var(--bad)"/><circle cx="132.2" cy="37.8" r="2.2" fill="var(--bad)"/><circle cx="154.1" cy="30.1" r="2.2" fill="var(--bad)"/><circle cx="175.9" cy="30.1" r="2.2" fill="var(--bad)"/><circle cx="197.7" cy="30.1" r="2.2" fill="var(--bad)"/><circle cx="219.6" cy="35.3" r="2.2" fill="var(--bad)"/><circle cx="241.4" cy="43.0" r="2.2" fill="var(--bad)"/><circle cx="263.2" cy="53.4" r="2.2" fill="var(--bad)"/><circle cx="285.1" cy="63.7" r="2.2" fill="var(--bad)"/><text x="44.9" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">1</text><text x="66.8" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">2</text><text x="88.6" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">3</text><text x="110.4" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">4</text><text x="132.2" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">5</text><text x="154.1" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">6</text><text x="175.9" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">7</text><text x="197.7" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">8</text><text x="219.6" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">9</text><text x="241.4" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">10</text><text x="263.2" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">11</text><text x="285.1" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">12</text><text x="4" y="16" font-size="9" fill="var(--bad)">°C</text><text x="328" y="16" font-size="9" text-anchor="end" fill="var(--teal)">mm</text><text x="165" y="208" font-size="9" text-anchor="middle" fill="var(--ink-muted)">月</text></svg><figcaption><span class="clim-a"><b>沙漠</b>（類似開羅）</span><br><span class="mono">年溫差 14°C・年雨量約 22 mm</span><br>幾乎沒有雨柱</figcaption></figure><figure class="fig clim" style="margin:0"><div class="clim-q">圖 5</div><svg viewBox="0 0 330 210" role="img" aria-label="氣候圖"><line x1="34" x2="296" y1="180.0" y2="180.0" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="183.0" font-size="9" text-anchor="end" fill="var(--ink-muted)">-30</text><line x1="34" x2="296" y1="154.2" y2="154.2" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="157.2" font-size="9" text-anchor="end" fill="var(--ink-muted)">-20</text><line x1="34" x2="296" y1="128.3" y2="128.3" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="131.3" font-size="9" text-anchor="end" fill="var(--ink-muted)">-10</text><line x1="34" x2="296" y1="102.5" y2="102.5" stroke="var(--line)" stroke-width="1.4"/><text x="30" y="105.5" font-size="9" text-anchor="end" fill="var(--ink-muted)">0</text><line x1="34" x2="296" y1="76.6" y2="76.6" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="79.6" font-size="9" text-anchor="end" fill="var(--ink-muted)">10</text><line x1="34" x2="296" y1="50.8" y2="50.8" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="53.8" font-size="9" text-anchor="end" fill="var(--ink-muted)">20</text><line x1="34" x2="296" y1="24.9" y2="24.9" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="27.9" font-size="9" text-anchor="end" fill="var(--ink-muted)">30</text><text x="300" y="183.0" font-size="9" fill="var(--ink-muted)">0</text><text x="300" y="141.0" font-size="9" fill="var(--ink-muted)">100</text><text x="300" y="99.0" font-size="9" fill="var(--ink-muted)">200</text><text x="300" y="57.0" font-size="9" fill="var(--ink-muted)">300</text><text x="300" y="15.0" font-size="9" fill="var(--ink-muted)">400</text><rect x="37.3" y="146.4" width="15.3" height="33.6" fill="var(--teal)" opacity="0.75"/><rect x="59.1" y="148.5" width="15.3" height="31.5" fill="var(--teal)" opacity="0.75"/><rect x="80.9" y="150.6" width="15.3" height="29.4" fill="var(--teal)" opacity="0.75"/><rect x="102.8" y="152.7" width="15.3" height="27.3" fill="var(--teal)" opacity="0.75"/><rect x="124.6" y="161.1" width="15.3" height="18.9" fill="var(--teal)" opacity="0.75"/><rect x="146.4" y="171.6" width="15.3" height="8.4" fill="var(--teal)" opacity="0.75"/><rect x="168.3" y="173.7" width="15.3" height="6.3" fill="var(--teal)" opacity="0.75"/><rect x="190.1" y="169.5" width="15.3" height="10.5" fill="var(--teal)" opacity="0.75"/><rect x="211.9" y="150.6" width="15.3" height="29.4" fill="var(--teal)" opacity="0.75"/><rect x="233.8" y="133.8" width="15.3" height="46.2" fill="var(--teal)" opacity="0.75"/><rect x="255.6" y="131.7" width="15.3" height="48.3" fill="var(--teal)" opacity="0.75"/><rect x="277.4" y="140.1" width="15.3" height="39.9" fill="var(--teal)" opacity="0.75"/><polyline points="44.9,81.8 66.8,79.2 88.6,74.0 110.4,66.3 132.2,55.9 154.1,45.6 175.9,37.8 197.7,37.8 219.6,45.6 241.4,58.5 263.2,71.4 285.1,79.2" fill="none" stroke="var(--bad)" stroke-width="2"/><circle cx="44.9" cy="81.8" r="2.2" fill="var(--bad)"/><circle cx="66.8" cy="79.2" r="2.2" fill="var(--bad)"/><circle cx="88.6" cy="74.0" r="2.2" fill="var(--bad)"/><circle cx="110.4" cy="66.3" r="2.2" fill="var(--bad)"/><circle cx="132.2" cy="55.9" r="2.2" fill="var(--bad)"/><circle cx="154.1" cy="45.6" r="2.2" fill="var(--bad)"/><circle cx="175.9" cy="37.8" r="2.2" fill="var(--bad)"/><circle cx="197.7" cy="37.8" r="2.2" fill="var(--bad)"/><circle cx="219.6" cy="45.6" r="2.2" fill="var(--bad)"/><circle cx="241.4" cy="58.5" r="2.2" fill="var(--bad)"/><circle cx="263.2" cy="71.4" r="2.2" fill="var(--bad)"/><circle cx="285.1" cy="79.2" r="2.2" fill="var(--bad)"/><text x="44.9" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">1</text><text x="66.8" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">2</text><text x="88.6" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">3</text><text x="110.4" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">4</text><text x="132.2" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">5</text><text x="154.1" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">6</text><text x="175.9" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">7</text><text x="197.7" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">8</text><text x="219.6" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">9</text><text x="241.4" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">10</text><text x="263.2" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">11</text><text x="285.1" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">12</text><text x="4" y="16" font-size="9" fill="var(--bad)">°C</text><text x="328" y="16" font-size="9" text-anchor="end" fill="var(--teal)">mm</text><text x="165" y="208" font-size="9" text-anchor="middle" fill="var(--ink-muted)">月</text></svg><figcaption><span class="clim-a"><b>地中海型（北半球）</b>（類似羅馬）</span><br><span class="mono">年溫差 17°C・年雨量約 785 mm</span><br>夏季高溫少雨、冬季溫和多雨</figcaption></figure><figure class="fig clim" style="margin:0"><div class="clim-q">圖 6</div><svg viewBox="0 0 330 210" role="img" aria-label="氣候圖"><line x1="34" x2="296" y1="180.0" y2="180.0" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="183.0" font-size="9" text-anchor="end" fill="var(--ink-muted)">-30</text><line x1="34" x2="296" y1="154.2" y2="154.2" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="157.2" font-size="9" text-anchor="end" fill="var(--ink-muted)">-20</text><line x1="34" x2="296" y1="128.3" y2="128.3" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="131.3" font-size="9" text-anchor="end" fill="var(--ink-muted)">-10</text><line x1="34" x2="296" y1="102.5" y2="102.5" stroke="var(--line)" stroke-width="1.4"/><text x="30" y="105.5" font-size="9" text-anchor="end" fill="var(--ink-muted)">0</text><line x1="34" x2="296" y1="76.6" y2="76.6" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="79.6" font-size="9" text-anchor="end" fill="var(--ink-muted)">10</text><line x1="34" x2="296" y1="50.8" y2="50.8" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="53.8" font-size="9" text-anchor="end" fill="var(--ink-muted)">20</text><line x1="34" x2="296" y1="24.9" y2="24.9" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="27.9" font-size="9" text-anchor="end" fill="var(--ink-muted)">30</text><text x="300" y="183.0" font-size="9" fill="var(--ink-muted)">0</text><text x="300" y="141.0" font-size="9" fill="var(--ink-muted)">100</text><text x="300" y="99.0" font-size="9" fill="var(--ink-muted)">200</text><text x="300" y="57.0" font-size="9" fill="var(--ink-muted)">300</text><text x="300" y="15.0" font-size="9" fill="var(--ink-muted)">400</text><rect x="37.3" y="173.7" width="15.3" height="6.3" fill="var(--teal)" opacity="0.75"/><rect x="59.1" y="173.7" width="15.3" height="6.3" fill="var(--teal)" opacity="0.75"/><rect x="80.9" y="171.6" width="15.3" height="8.4" fill="var(--teal)" opacity="0.75"/><rect x="102.8" y="161.1" width="15.3" height="18.9" fill="var(--teal)" opacity="0.75"/><rect x="124.6" y="129.6" width="15.3" height="50.4" fill="var(--teal)" opacity="0.75"/><rect x="146.4" y="104.4" width="15.3" height="75.6" fill="var(--teal)" opacity="0.75"/><rect x="168.3" y="108.6" width="15.3" height="71.4" fill="var(--teal)" opacity="0.75"/><rect x="190.1" y="121.2" width="15.3" height="58.8" fill="var(--teal)" opacity="0.75"/><rect x="211.9" y="146.4" width="15.3" height="33.6" fill="var(--teal)" opacity="0.75"/><rect x="233.8" y="156.9" width="15.3" height="23.1" fill="var(--teal)" opacity="0.75"/><rect x="255.6" y="171.6" width="15.3" height="8.4" fill="var(--teal)" opacity="0.75"/><rect x="277.4" y="173.7" width="15.3" height="6.3" fill="var(--teal)" opacity="0.75"/><polyline points="44.9,40.4 66.8,40.4 88.6,45.6 110.4,53.4 132.2,61.1 154.1,66.3 175.9,68.9 197.7,68.9 219.6,63.7 241.4,58.5 263.2,50.8 285.1,45.6" fill="none" stroke="var(--bad)" stroke-width="2"/><circle cx="44.9" cy="40.4" r="2.2" fill="var(--bad)"/><circle cx="66.8" cy="40.4" r="2.2" fill="var(--bad)"/><circle cx="88.6" cy="45.6" r="2.2" fill="var(--bad)"/><circle cx="110.4" cy="53.4" r="2.2" fill="var(--bad)"/><circle cx="132.2" cy="61.1" r="2.2" fill="var(--bad)"/><circle cx="154.1" cy="66.3" r="2.2" fill="var(--bad)"/><circle cx="175.9" cy="68.9" r="2.2" fill="var(--bad)"/><circle cx="197.7" cy="68.9" r="2.2" fill="var(--bad)"/><circle cx="219.6" cy="63.7" r="2.2" fill="var(--bad)"/><circle cx="241.4" cy="58.5" r="2.2" fill="var(--bad)"/><circle cx="263.2" cy="50.8" r="2.2" fill="var(--bad)"/><circle cx="285.1" cy="45.6" r="2.2" fill="var(--bad)"/><text x="44.9" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">1</text><text x="66.8" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">2</text><text x="88.6" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">3</text><text x="110.4" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">4</text><text x="132.2" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">5</text><text x="154.1" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">6</text><text x="175.9" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">7</text><text x="197.7" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">8</text><text x="219.6" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">9</text><text x="241.4" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">10</text><text x="263.2" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">11</text><text x="285.1" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">12</text><text x="4" y="16" font-size="9" fill="var(--bad)">°C</text><text x="328" y="16" font-size="9" text-anchor="end" fill="var(--teal)">mm</text><text x="165" y="208" font-size="9" text-anchor="middle" fill="var(--ink-muted)">月</text></svg><figcaption><span class="clim-a"><b>地中海型（南半球）</b>（類似伯斯）</span><br><span class="mono">年溫差 11°C・年雨量約 875 mm</span><br>曲線是「U」形，雨下在 6–8 月：南半球的冬天</figcaption></figure><figure class="fig clim" style="margin:0"><div class="clim-q">圖 7</div><svg viewBox="0 0 330 210" role="img" aria-label="氣候圖"><line x1="34" x2="296" y1="180.0" y2="180.0" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="183.0" font-size="9" text-anchor="end" fill="var(--ink-muted)">-30</text><line x1="34" x2="296" y1="154.2" y2="154.2" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="157.2" font-size="9" text-anchor="end" fill="var(--ink-muted)">-20</text><line x1="34" x2="296" y1="128.3" y2="128.3" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="131.3" font-size="9" text-anchor="end" fill="var(--ink-muted)">-10</text><line x1="34" x2="296" y1="102.5" y2="102.5" stroke="var(--line)" stroke-width="1.4"/><text x="30" y="105.5" font-size="9" text-anchor="end" fill="var(--ink-muted)">0</text><line x1="34" x2="296" y1="76.6" y2="76.6" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="79.6" font-size="9" text-anchor="end" fill="var(--ink-muted)">10</text><line x1="34" x2="296" y1="50.8" y2="50.8" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="53.8" font-size="9" text-anchor="end" fill="var(--ink-muted)">20</text><line x1="34" x2="296" y1="24.9" y2="24.9" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="27.9" font-size="9" text-anchor="end" fill="var(--ink-muted)">30</text><text x="300" y="183.0" font-size="9" fill="var(--ink-muted)">0</text><text x="300" y="141.0" font-size="9" fill="var(--ink-muted)">100</text><text x="300" y="99.0" font-size="9" fill="var(--ink-muted)">200</text><text x="300" y="57.0" font-size="9" fill="var(--ink-muted)">300</text><text x="300" y="15.0" font-size="9" fill="var(--ink-muted)">400</text><rect x="37.3" y="156.9" width="15.3" height="23.1" fill="var(--teal)" opacity="0.75"/><rect x="59.1" y="163.2" width="15.3" height="16.8" fill="var(--teal)" opacity="0.75"/><rect x="80.9" y="161.1" width="15.3" height="18.9" fill="var(--teal)" opacity="0.75"/><rect x="102.8" y="161.1" width="15.3" height="18.9" fill="var(--teal)" opacity="0.75"/><rect x="124.6" y="159.0" width="15.3" height="21.0" fill="var(--teal)" opacity="0.75"/><rect x="146.4" y="161.1" width="15.3" height="18.9" fill="var(--teal)" opacity="0.75"/><rect x="168.3" y="161.1" width="15.3" height="18.9" fill="var(--teal)" opacity="0.75"/><rect x="190.1" y="159.0" width="15.3" height="21.0" fill="var(--teal)" opacity="0.75"/><rect x="211.9" y="159.0" width="15.3" height="21.0" fill="var(--teal)" opacity="0.75"/><rect x="233.8" y="150.6" width="15.3" height="29.4" fill="var(--teal)" opacity="0.75"/><rect x="255.6" y="152.7" width="15.3" height="27.3" fill="var(--teal)" opacity="0.75"/><rect x="277.4" y="156.9" width="15.3" height="23.1" fill="var(--teal)" opacity="0.75"/><polyline points="44.9,89.5 66.8,89.5 88.6,84.4 110.4,79.2 132.2,68.9 154.1,61.1 175.9,55.9 197.7,55.9 219.6,63.7 241.4,74.0 263.2,84.4 285.1,89.5" fill="none" stroke="var(--bad)" stroke-width="2"/><circle cx="44.9" cy="89.5" r="2.2" fill="var(--bad)"/><circle cx="66.8" cy="89.5" r="2.2" fill="var(--bad)"/><circle cx="88.6" cy="84.4" r="2.2" fill="var(--bad)"/><circle cx="110.4" cy="79.2" r="2.2" fill="var(--bad)"/><circle cx="132.2" cy="68.9" r="2.2" fill="var(--bad)"/><circle cx="154.1" cy="61.1" r="2.2" fill="var(--bad)"/><circle cx="175.9" cy="55.9" r="2.2" fill="var(--bad)"/><circle cx="197.7" cy="55.9" r="2.2" fill="var(--bad)"/><circle cx="219.6" cy="63.7" r="2.2" fill="var(--bad)"/><circle cx="241.4" cy="74.0" r="2.2" fill="var(--bad)"/><circle cx="263.2" cy="84.4" r="2.2" fill="var(--bad)"/><circle cx="285.1" cy="89.5" r="2.2" fill="var(--bad)"/><text x="44.9" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">1</text><text x="66.8" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">2</text><text x="88.6" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">3</text><text x="110.4" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">4</text><text x="132.2" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">5</text><text x="154.1" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">6</text><text x="175.9" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">7</text><text x="197.7" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">8</text><text x="219.6" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">9</text><text x="241.4" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">10</text><text x="263.2" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">11</text><text x="285.1" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">12</text><text x="4" y="16" font-size="9" fill="var(--bad)">°C</text><text x="328" y="16" font-size="9" text-anchor="end" fill="var(--teal)">mm</text><text x="165" y="208" font-size="9" text-anchor="middle" fill="var(--ink-muted)">月</text></svg><figcaption><span class="clim-a"><b>溫帶海洋性</b>（類似倫敦）</span><br><span class="mono">年溫差 13°C・年雨量約 615 mm</span><br>年溫差小，各月雨量平均</figcaption></figure><figure class="fig clim" style="margin:0"><div class="clim-q">圖 8</div><svg viewBox="0 0 330 210" role="img" aria-label="氣候圖"><line x1="34" x2="296" y1="180.0" y2="180.0" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="183.0" font-size="9" text-anchor="end" fill="var(--ink-muted)">-30</text><line x1="34" x2="296" y1="154.2" y2="154.2" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="157.2" font-size="9" text-anchor="end" fill="var(--ink-muted)">-20</text><line x1="34" x2="296" y1="128.3" y2="128.3" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="131.3" font-size="9" text-anchor="end" fill="var(--ink-muted)">-10</text><line x1="34" x2="296" y1="102.5" y2="102.5" stroke="var(--line)" stroke-width="1.4"/><text x="30" y="105.5" font-size="9" text-anchor="end" fill="var(--ink-muted)">0</text><line x1="34" x2="296" y1="76.6" y2="76.6" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="79.6" font-size="9" text-anchor="end" fill="var(--ink-muted)">10</text><line x1="34" x2="296" y1="50.8" y2="50.8" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="53.8" font-size="9" text-anchor="end" fill="var(--ink-muted)">20</text><line x1="34" x2="296" y1="24.9" y2="24.9" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="27.9" font-size="9" text-anchor="end" fill="var(--ink-muted)">30</text><text x="300" y="183.0" font-size="9" fill="var(--ink-muted)">0</text><text x="300" y="141.0" font-size="9" fill="var(--ink-muted)">100</text><text x="300" y="99.0" font-size="9" fill="var(--ink-muted)">200</text><text x="300" y="57.0" font-size="9" fill="var(--ink-muted)">300</text><text x="300" y="15.0" font-size="9" fill="var(--ink-muted)">400</text><rect x="37.3" y="142.2" width="15.3" height="37.8" fill="var(--teal)" opacity="0.75"/><rect x="59.1" y="104.4" width="15.3" height="75.6" fill="var(--teal)" opacity="0.75"/><rect x="80.9" y="104.4" width="15.3" height="75.6" fill="var(--teal)" opacity="0.75"/><rect x="102.8" y="104.4" width="15.3" height="75.6" fill="var(--teal)" opacity="0.75"/><rect x="124.6" y="75.0" width="15.3" height="105.0" fill="var(--teal)" opacity="0.75"/><rect x="146.4" y="45.6" width="15.3" height="134.4" fill="var(--teal)" opacity="0.75"/><rect x="168.3" y="79.2" width="15.3" height="100.8" fill="var(--teal)" opacity="0.75"/><rect x="190.1" y="45.6" width="15.3" height="134.4" fill="var(--teal)" opacity="0.75"/><rect x="211.9" y="28.8" width="15.3" height="151.2" fill="var(--teal)" opacity="0.75"/><rect x="233.8" y="129.6" width="15.3" height="50.4" fill="var(--teal)" opacity="0.75"/><rect x="255.6" y="142.2" width="15.3" height="37.8" fill="var(--teal)" opacity="0.75"/><rect x="277.4" y="148.5" width="15.3" height="31.5" fill="var(--teal)" opacity="0.75"/><polyline points="44.9,61.1 66.8,61.1 88.6,55.9 110.4,45.6 132.2,37.8 154.1,30.1 175.9,24.9 197.7,27.5 219.6,32.7 241.4,40.4 263.2,48.2 285.1,58.5" fill="none" stroke="var(--bad)" stroke-width="2"/><circle cx="44.9" cy="61.1" r="2.2" fill="var(--bad)"/><circle cx="66.8" cy="61.1" r="2.2" fill="var(--bad)"/><circle cx="88.6" cy="55.9" r="2.2" fill="var(--bad)"/><circle cx="110.4" cy="45.6" r="2.2" fill="var(--bad)"/><circle cx="132.2" cy="37.8" r="2.2" fill="var(--bad)"/><circle cx="154.1" cy="30.1" r="2.2" fill="var(--bad)"/><circle cx="175.9" cy="24.9" r="2.2" fill="var(--bad)"/><circle cx="197.7" cy="27.5" r="2.2" fill="var(--bad)"/><circle cx="219.6" cy="32.7" r="2.2" fill="var(--bad)"/><circle cx="241.4" cy="40.4" r="2.2" fill="var(--bad)"/><circle cx="263.2" cy="48.2" r="2.2" fill="var(--bad)"/><circle cx="285.1" cy="58.5" r="2.2" fill="var(--bad)"/><text x="44.9" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">1</text><text x="66.8" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">2</text><text x="88.6" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">3</text><text x="110.4" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">4</text><text x="132.2" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">5</text><text x="154.1" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">6</text><text x="175.9" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">7</text><text x="197.7" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">8</text><text x="219.6" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">9</text><text x="241.4" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">10</text><text x="263.2" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">11</text><text x="285.1" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">12</text><text x="4" y="16" font-size="9" fill="var(--bad)">°C</text><text x="328" y="16" font-size="9" text-anchor="end" fill="var(--teal)">mm</text><text x="165" y="208" font-size="9" text-anchor="middle" fill="var(--ink-muted)">月</text></svg><figcaption><span class="clim-a"><b>副熱帶季風（濕潤）</b>（類似台北）</span><br><span class="mono">年溫差 14°C・年雨量約 2405 mm</span><br>夏熱冬溫和，全年有雨、夏秋較多</figcaption></figure><figure class="fig clim" style="margin:0"><div class="clim-q">圖 9</div><svg viewBox="0 0 330 210" role="img" aria-label="氣候圖"><line x1="34" x2="296" y1="180.0" y2="180.0" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="183.0" font-size="9" text-anchor="end" fill="var(--ink-muted)">-30</text><line x1="34" x2="296" y1="154.2" y2="154.2" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="157.2" font-size="9" text-anchor="end" fill="var(--ink-muted)">-20</text><line x1="34" x2="296" y1="128.3" y2="128.3" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="131.3" font-size="9" text-anchor="end" fill="var(--ink-muted)">-10</text><line x1="34" x2="296" y1="102.5" y2="102.5" stroke="var(--line)" stroke-width="1.4"/><text x="30" y="105.5" font-size="9" text-anchor="end" fill="var(--ink-muted)">0</text><line x1="34" x2="296" y1="76.6" y2="76.6" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="79.6" font-size="9" text-anchor="end" fill="var(--ink-muted)">10</text><line x1="34" x2="296" y1="50.8" y2="50.8" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="53.8" font-size="9" text-anchor="end" fill="var(--ink-muted)">20</text><line x1="34" x2="296" y1="24.9" y2="24.9" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="27.9" font-size="9" text-anchor="end" fill="var(--ink-muted)">30</text><text x="300" y="183.0" font-size="9" fill="var(--ink-muted)">0</text><text x="300" y="141.0" font-size="9" fill="var(--ink-muted)">100</text><text x="300" y="99.0" font-size="9" fill="var(--ink-muted)">200</text><text x="300" y="57.0" font-size="9" fill="var(--ink-muted)">300</text><text x="300" y="15.0" font-size="9" fill="var(--ink-muted)">400</text><rect x="37.3" y="178.7" width="15.3" height="1.3" fill="var(--teal)" opacity="0.75"/><rect x="59.1" y="177.9" width="15.3" height="2.1" fill="var(--teal)" opacity="0.75"/><rect x="80.9" y="175.8" width="15.3" height="4.2" fill="var(--teal)" opacity="0.75"/><rect x="102.8" y="169.5" width="15.3" height="10.5" fill="var(--teal)" opacity="0.75"/><rect x="124.6" y="165.3" width="15.3" height="14.7" fill="var(--teal)" opacity="0.75"/><rect x="146.4" y="148.5" width="15.3" height="31.5" fill="var(--teal)" opacity="0.75"/><rect x="168.3" y="100.2" width="15.3" height="79.8" fill="var(--teal)" opacity="0.75"/><rect x="190.1" y="112.8" width="15.3" height="67.2" fill="var(--teal)" opacity="0.75"/><rect x="211.9" y="159.0" width="15.3" height="21.0" fill="var(--teal)" opacity="0.75"/><rect x="233.8" y="169.5" width="15.3" height="10.5" fill="var(--teal)" opacity="0.75"/><rect x="255.6" y="175.8" width="15.3" height="4.2" fill="var(--teal)" opacity="0.75"/><rect x="277.4" y="178.7" width="15.3" height="1.3" fill="var(--teal)" opacity="0.75"/><polyline points="44.9,112.8 66.8,105.0 88.6,87.0 110.4,66.3 132.2,50.8 154.1,37.8 175.9,35.3 197.7,37.8 219.6,50.8 241.4,68.9 263.2,92.1 285.1,107.6" fill="none" stroke="var(--bad)" stroke-width="2"/><circle cx="44.9" cy="112.8" r="2.2" fill="var(--bad)"/><circle cx="66.8" cy="105.0" r="2.2" fill="var(--bad)"/><circle cx="88.6" cy="87.0" r="2.2" fill="var(--bad)"/><circle cx="110.4" cy="66.3" r="2.2" fill="var(--bad)"/><circle cx="132.2" cy="50.8" r="2.2" fill="var(--bad)"/><circle cx="154.1" cy="37.8" r="2.2" fill="var(--bad)"/><circle cx="175.9" cy="35.3" r="2.2" fill="var(--bad)"/><circle cx="197.7" cy="37.8" r="2.2" fill="var(--bad)"/><circle cx="219.6" cy="50.8" r="2.2" fill="var(--bad)"/><circle cx="241.4" cy="68.9" r="2.2" fill="var(--bad)"/><circle cx="263.2" cy="92.1" r="2.2" fill="var(--bad)"/><circle cx="285.1" cy="107.6" r="2.2" fill="var(--bad)"/><text x="44.9" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">1</text><text x="66.8" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">2</text><text x="88.6" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">3</text><text x="110.4" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">4</text><text x="132.2" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">5</text><text x="154.1" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">6</text><text x="175.9" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">7</text><text x="197.7" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">8</text><text x="219.6" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">9</text><text x="241.4" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">10</text><text x="263.2" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">11</text><text x="285.1" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">12</text><text x="4" y="16" font-size="9" fill="var(--bad)">°C</text><text x="328" y="16" font-size="9" text-anchor="end" fill="var(--teal)">mm</text><text x="165" y="208" font-size="9" text-anchor="middle" fill="var(--ink-muted)">月</text></svg><figcaption><span class="clim-a"><b>溫帶季風</b>（類似北京）</span><br><span class="mono">年溫差 30°C・年雨量約 591 mm</span><br>冬季低於 0°C、年溫差大，夏雨冬乾</figcaption></figure><figure class="fig clim" style="margin:0"><div class="clim-q">圖 10</div><svg viewBox="0 0 330 210" role="img" aria-label="氣候圖"><line x1="34" x2="296" y1="180.0" y2="180.0" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="183.0" font-size="9" text-anchor="end" fill="var(--ink-muted)">-30</text><line x1="34" x2="296" y1="154.2" y2="154.2" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="157.2" font-size="9" text-anchor="end" fill="var(--ink-muted)">-20</text><line x1="34" x2="296" y1="128.3" y2="128.3" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="131.3" font-size="9" text-anchor="end" fill="var(--ink-muted)">-10</text><line x1="34" x2="296" y1="102.5" y2="102.5" stroke="var(--line)" stroke-width="1.4"/><text x="30" y="105.5" font-size="9" text-anchor="end" fill="var(--ink-muted)">0</text><line x1="34" x2="296" y1="76.6" y2="76.6" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="79.6" font-size="9" text-anchor="end" fill="var(--ink-muted)">10</text><line x1="34" x2="296" y1="50.8" y2="50.8" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="53.8" font-size="9" text-anchor="end" fill="var(--ink-muted)">20</text><line x1="34" x2="296" y1="24.9" y2="24.9" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="27.9" font-size="9" text-anchor="end" fill="var(--ink-muted)">30</text><text x="300" y="183.0" font-size="9" fill="var(--ink-muted)">0</text><text x="300" y="141.0" font-size="9" fill="var(--ink-muted)">100</text><text x="300" y="99.0" font-size="9" fill="var(--ink-muted)">200</text><text x="300" y="57.0" font-size="9" fill="var(--ink-muted)">300</text><text x="300" y="15.0" font-size="9" fill="var(--ink-muted)">400</text><rect x="37.3" y="159.0" width="15.3" height="21.0" fill="var(--teal)" opacity="0.75"/><rect x="59.1" y="163.2" width="15.3" height="16.8" fill="var(--teal)" opacity="0.75"/><rect x="80.9" y="165.3" width="15.3" height="14.7" fill="var(--teal)" opacity="0.75"/><rect x="102.8" y="163.2" width="15.3" height="16.8" fill="var(--teal)" opacity="0.75"/><rect x="124.6" y="159.0" width="15.3" height="21.0" fill="var(--teal)" opacity="0.75"/><rect x="146.4" y="148.5" width="15.3" height="31.5" fill="var(--teal)" opacity="0.75"/><rect x="168.3" y="142.2" width="15.3" height="37.8" fill="var(--teal)" opacity="0.75"/><rect x="190.1" y="148.5" width="15.3" height="31.5" fill="var(--teal)" opacity="0.75"/><rect x="211.9" y="152.7" width="15.3" height="27.3" fill="var(--teal)" opacity="0.75"/><rect x="233.8" y="154.8" width="15.3" height="25.2" fill="var(--teal)" opacity="0.75"/><rect x="255.6" y="156.9" width="15.3" height="23.1" fill="var(--teal)" opacity="0.75"/><rect x="277.4" y="159.0" width="15.3" height="21.0" fill="var(--teal)" opacity="0.75"/><polyline points="44.9,123.1 66.8,120.6 88.6,107.6 110.4,87.0 132.2,68.9 154.1,58.5 175.9,53.4 197.7,58.5 219.6,74.0 241.4,89.5 263.2,105.0 285.1,118.0" fill="none" stroke="var(--bad)" stroke-width="2"/><circle cx="44.9" cy="123.1" r="2.2" fill="var(--bad)"/><circle cx="66.8" cy="120.6" r="2.2" fill="var(--bad)"/><circle cx="88.6" cy="107.6" r="2.2" fill="var(--bad)"/><circle cx="110.4" cy="87.0" r="2.2" fill="var(--bad)"/><circle cx="132.2" cy="68.9" r="2.2" fill="var(--bad)"/><circle cx="154.1" cy="58.5" r="2.2" fill="var(--bad)"/><circle cx="175.9" cy="53.4" r="2.2" fill="var(--bad)"/><circle cx="197.7" cy="58.5" r="2.2" fill="var(--bad)"/><circle cx="219.6" cy="74.0" r="2.2" fill="var(--bad)"/><circle cx="241.4" cy="89.5" r="2.2" fill="var(--bad)"/><circle cx="263.2" cy="105.0" r="2.2" fill="var(--bad)"/><circle cx="285.1" cy="118.0" r="2.2" fill="var(--bad)"/><text x="44.9" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">1</text><text x="66.8" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">2</text><text x="88.6" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">3</text><text x="110.4" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">4</text><text x="132.2" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">5</text><text x="154.1" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">6</text><text x="175.9" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">7</text><text x="197.7" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">8</text><text x="219.6" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">9</text><text x="241.4" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">10</text><text x="263.2" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">11</text><text x="285.1" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">12</text><text x="4" y="16" font-size="9" fill="var(--bad)">°C</text><text x="328" y="16" font-size="9" text-anchor="end" fill="var(--teal)">mm</text><text x="165" y="208" font-size="9" text-anchor="middle" fill="var(--ink-muted)">月</text></svg><figcaption><span class="clim-a"><b>溫帶大陸性</b>（類似莫斯科）</span><br><span class="mono">年溫差 27°C・年雨量約 685 mm</span><br>冬季嚴寒、年溫差大，雨量少、夏季稍多</figcaption></figure><figure class="fig clim" style="margin:0"><div class="clim-q">圖 11</div><svg viewBox="0 0 330 210" role="img" aria-label="氣候圖"><line x1="34" x2="296" y1="180.0" y2="180.0" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="183.0" font-size="9" text-anchor="end" fill="var(--ink-muted)">-30</text><line x1="34" x2="296" y1="154.2" y2="154.2" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="157.2" font-size="9" text-anchor="end" fill="var(--ink-muted)">-20</text><line x1="34" x2="296" y1="128.3" y2="128.3" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="131.3" font-size="9" text-anchor="end" fill="var(--ink-muted)">-10</text><line x1="34" x2="296" y1="102.5" y2="102.5" stroke="var(--line)" stroke-width="1.4"/><text x="30" y="105.5" font-size="9" text-anchor="end" fill="var(--ink-muted)">0</text><line x1="34" x2="296" y1="76.6" y2="76.6" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="79.6" font-size="9" text-anchor="end" fill="var(--ink-muted)">10</text><line x1="34" x2="296" y1="50.8" y2="50.8" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="53.8" font-size="9" text-anchor="end" fill="var(--ink-muted)">20</text><line x1="34" x2="296" y1="24.9" y2="24.9" stroke="var(--line)" stroke-width="0.6"/><text x="30" y="27.9" font-size="9" text-anchor="end" fill="var(--ink-muted)">30</text><text x="300" y="183.0" font-size="9" fill="var(--ink-muted)">0</text><text x="300" y="141.0" font-size="9" fill="var(--ink-muted)">100</text><text x="300" y="99.0" font-size="9" fill="var(--ink-muted)">200</text><text x="300" y="57.0" font-size="9" fill="var(--ink-muted)">300</text><text x="300" y="15.0" font-size="9" fill="var(--ink-muted)">400</text><rect x="37.3" y="176.6" width="15.3" height="3.4" fill="var(--teal)" opacity="0.75"/><rect x="59.1" y="176.6" width="15.3" height="3.4" fill="var(--teal)" opacity="0.75"/><rect x="80.9" y="177.1" width="15.3" height="2.9" fill="var(--teal)" opacity="0.75"/><rect x="102.8" y="176.6" width="15.3" height="3.4" fill="var(--teal)" opacity="0.75"/><rect x="124.6" y="175.8" width="15.3" height="4.2" fill="var(--teal)" opacity="0.75"/><rect x="146.4" y="173.7" width="15.3" height="6.3" fill="var(--teal)" opacity="0.75"/><rect x="168.3" y="169.5" width="15.3" height="10.5" fill="var(--teal)" opacity="0.75"/><rect x="190.1" y="167.4" width="15.3" height="12.6" fill="var(--teal)" opacity="0.75"/><rect x="211.9" y="171.6" width="15.3" height="8.4" fill="var(--teal)" opacity="0.75"/><rect x="233.8" y="173.7" width="15.3" height="6.3" fill="var(--teal)" opacity="0.75"/><rect x="255.6" y="175.8" width="15.3" height="4.2" fill="var(--teal)" opacity="0.75"/><rect x="277.4" y="176.6" width="15.3" height="3.4" fill="var(--teal)" opacity="0.75"/><polyline points="44.9,174.8 66.8,174.8 88.6,169.7 110.4,149.0 132.2,118.0 154.1,94.7 175.9,84.4 197.7,87.0 219.6,99.9 241.4,128.3 263.2,154.2 285.1,167.1" fill="none" stroke="var(--bad)" stroke-width="2"/><circle cx="44.9" cy="174.8" r="2.2" fill="var(--bad)"/><circle cx="66.8" cy="174.8" r="2.2" fill="var(--bad)"/><circle cx="88.6" cy="169.7" r="2.2" fill="var(--bad)"/><circle cx="110.4" cy="149.0" r="2.2" fill="var(--bad)"/><circle cx="132.2" cy="118.0" r="2.2" fill="var(--bad)"/><circle cx="154.1" cy="94.7" r="2.2" fill="var(--bad)"/><circle cx="175.9" cy="84.4" r="2.2" fill="var(--bad)"/><circle cx="197.7" cy="87.0" r="2.2" fill="var(--bad)"/><circle cx="219.6" cy="99.9" r="2.2" fill="var(--bad)"/><circle cx="241.4" cy="128.3" r="2.2" fill="var(--bad)"/><circle cx="263.2" cy="154.2" r="2.2" fill="var(--bad)"/><circle cx="285.1" cy="167.1" r="2.2" fill="var(--bad)"/><text x="44.9" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">1</text><text x="66.8" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">2</text><text x="88.6" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">3</text><text x="110.4" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">4</text><text x="132.2" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">5</text><text x="154.1" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">6</text><text x="175.9" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">7</text><text x="197.7" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">8</text><text x="219.6" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">9</text><text x="241.4" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">10</text><text x="263.2" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">11</text><text x="285.1" y="196" font-size="9" text-anchor="middle" fill="var(--ink-muted)">12</text><text x="4" y="16" font-size="9" fill="var(--bad)">°C</text><text x="328" y="16" font-size="9" text-anchor="end" fill="var(--teal)">mm</text><text x="165" y="208" font-size="9" text-anchor="middle" fill="var(--ink-muted)">月</text></svg><figcaption><span class="clim-a"><b>寒帶（苔原）</b>（高緯示意）</span><br><span class="mono">年溫差 35°C・年雨量約 164 mm</span><br>最暖月也不到 10°C</figcaption></figure></div></section>
+<section class="part"><span class="part-kicker">本節重點</span><ul class="clean"><li>先看最冷月定溫度帶，再看最熱月定半球，最後看雨季。</li><li>夏乾冬雨＝地中海型；夏雨冬乾＝季風或莽原；全年雨＝雨林或海洋性。</li><li>南半球的氣候圖曲線是 U 形，雨季月份也跟北半球相反。</li></ul></section>
+<footer>
+  <p>氣候圖依各氣候類型的典型型態繪製，數值為教學示意（以括號中的城市為參考型態），不是特定年份的實測資料。</p>
+  <div class="id"><span>筱葳學測地理</span><span>氣候圖速查</span></div>
+</footer>
+</div>
+</div>
+<script>
+(function(){
+  var PAGE = (document.querySelector('.eyebrow') || {}).textContent || location.pathname;
+  var SKEY = 'geo-practice-v1:' + PAGE;
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(SKEY) || '{}') || {}; } catch (e) { saved = {}; }
+  function persist(){ try { localStorage.setItem(SKEY, JSON.stringify(saved)); } catch (e) {} }
+
+  var cards = [].slice.call(document.querySelectorAll('.qcard.mcq[data-ans], .qcard.txt'));
+  var state = {};
+  var sb = document.getElementById('score');
+  function updScore(){
+    if (!sb) return;
+    var ok = 0, done = 0;
+    cards.forEach(function(c, i){ if (state[i] !== undefined) { done++; if (state[i]) ok++; } });
+    sb.textContent = '答對 ' + ok + ' / ' + cards.length + (done === cards.length && cards.length ? '・全部完成' : '');
+    sb.className = 'meter ' + (done === cards.length && cards.length ? (ok / cards.length >= 0.8 ? 'ok' : 'warn') : '');
+  }
+
+  /* ---------- multiple choice ---------- */
+  function lockMcq(q, k, idx){
+    var ans = q.getAttribute('data-ans');
+    var btn = q.querySelector('.opt-btn[data-k="' + k + '"]');
+    if (!btn) return;
+    if (k === ans) btn.classList.add('right');
+    else { btn.classList.add('wrong'); var r = q.querySelector('.opt-btn[data-k="' + ans + '"]'); if (r) r.classList.add('right'); }
+    q.querySelectorAll('.opt-btn').forEach(function(x){ x.disabled = true; });
+    var d = q.querySelector('details'); if (d) d.open = true;
+    state[idx] = (k === ans);
+  }
+
+  /* ---------- text answers ---------- */
+  function expand(s){
+    return s.replace(/[’‘`]/g, "'")
+      .replace(/\b(won)'t\b/g, 'will not').replace(/\bcan't\b/g, 'can not').replace(/\bcannot\b/g, 'can not')
+      .replace(/n't\b/g, ' not')
+      .replace(/\b(it|that|there|what|he|she|who)'s\b/g, '$1 is')
+      .replace(/'re\b/g, ' are').replace(/'ve\b/g, ' have').replace(/'ll\b/g, ' will').replace(/\bi'm\b/g, 'i am');
+  }
+  function norm(s){
+    s = expand(String(s).toLowerCase());
+    s = s.replace(/[（）()「」『』“”"]/g, ' ')
+         .replace(/[，。、！？；：,.!?;:／\/|]/g, ' ')
+         .replace(/(\w)-(\w)/g, '$1$2')
+         .replace(/\s+/g, ' ').trim();
+    return s;
+  }
+  function toks(s){ return norm(s) ? norm(s).split(' ') : []; }
+  function lcs(a, b){
+    var m = a.length, n = b.length, dp = [], i, j;
+    for (i = 0; i <= m; i++) { dp.push(new Array(n + 1).fill(0)); }
+    for (i = m - 1; i >= 0; i--) for (j = n - 1; j >= 0; j--)
+      dp[i][j] = a[i] === b[j] ? dp[i + 1][j + 1] + 1 : Math.max(dp[i + 1][j], dp[i][j + 1]);
+    var ka = {}, kb = {}; i = 0; j = 0;
+    while (i < m && j < n) {
+      if (a[i] === b[j]) { ka[i] = 1; kb[j] = 1; i++; j++; }
+      else if (dp[i + 1][j] >= dp[i][j + 1]) i++; else j++;
+    }
+    return { len: dp[0][0], ka: ka, kb: kb };
+  }
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function judge(inp){
+    var val = inp.value;
+    if (!norm(val)) return { empty: true };
+    var kw = inp.getAttribute('data-kw');
+    if (kw) {
+      var groups = JSON.parse(kw), low = val.toLowerCase();
+      var ok = groups.every(function(g){ return g.some(function(w){ return low.indexOf(String(w).toLowerCase()) !== -1; }); });
+      return { kw: true, ok: ok };
+    }
+    var accepts = (inp.getAttribute('data-accept') || '').split('||').filter(Boolean);
+    var you = toks(val), best = null;
+    for (var i = 0; i < accepts.length; i++) {
+      var ref = toks(accepts[i]);
+      if (ref.join(' ') === you.join(' ')) return { ok: true, exact: true };
+      var r = lcs(you, ref), sim = (2 * r.len) / (you.length + ref.length || 1);
+      if (!best || sim > best.sim) best = { sim: sim, r: r, ref: ref, raw: accepts[i] };
+    }
+    return { ok: false, best: best, you: you };
+  }
+  function render(inp, res){
+    var v = inp.parentNode.querySelector('.verdict[data-for="' + inp.id + '"]');
+    if (!v) return;
+    if (res.empty) { v.innerHTML = '<span class="vd warn">還沒有作答</span>'; return; }
+    if (res.ok && res.kw) { v.innerHTML = '<span class="vd good">✓ 關鍵答案正確</span>　請再看下方解析確認說法。'; return; }
+    if (res.ok) { v.innerHTML = '<span class="vd good">✓ 和標準答案相同</span>'; return; }
+    if (res.kw) { v.innerHTML = '<span class="vd bad">✗ 還沒寫到關鍵答案</span>　看看下方解析。'; return; }
+    var b = res.best, you = res.you;
+    var yl = you.map(function(t, i){ return b.r.ka[i] ? esc(t) : '<span class="dx-bad">' + esc(t) + '</span>'; }).join(' ');
+    var rl = b.ref.map(function(t, i){ return b.r.kb[i] ? esc(t) : '<span class="dx-good">' + esc(t) + '</span>'; }).join(' ');
+    v.innerHTML = '<span class="vd bad">✗ 和標準答案不同（相似度 ' + Math.round(b.sim * 100) + '%）</span>' +
+      '<div class="dx"><div><b>你的答案</b>' + yl + '</div><div><b>標準答案</b>' + rl + '</div></div>' +
+      '<p class="dx-note">紅色是和標準答案不同的字，綠色是標準答案有、你沒寫到的字。大小寫與標點不影響比對；翻譯和改寫可能有其他正確寫法，請對照解析判斷。</p>';
+  }
+  function checkCard(c, idx){
+    var ins = [].slice.call(c.querySelectorAll('.ans-in'));
+    var all = true, any = false;
+    ins.forEach(function(inp){ var r = judge(inp); render(inp, r); if (!r.empty) any = true; if (!r.ok) all = false; });
+    if (any) state[idx] = all;
+    var d = c.querySelector('details'); if (d && any) d.open = true;
+    updScore();
+  }
+
+  cards.forEach(function(c, idx){
+    if (c.classList.contains('mcq')) {
+      var answered = false;
+      c.querySelectorAll('.opt-btn').forEach(function(b){
+        b.addEventListener('click', function(){
+          if (answered) return; answered = true;
+          lockMcq(c, b.getAttribute('data-k'), idx);
+          saved['m' + idx] = b.getAttribute('data-k'); persist(); updScore();
+        });
+      });
+      if (saved['m' + idx]) { answered = true; lockMcq(c, saved['m' + idx], idx); }
+    } else {
+      var ins = [].slice.call(c.querySelectorAll('.ans-in'));
+      ins.forEach(function(inp, k){
+        if (!inp.id) inp.id = 'q' + idx + '_' + k;
+        var key = 't' + idx + '_' + k;
+        if (saved[key]) inp.value = saved[key];
+        inp.addEventListener('input', function(){ saved[key] = inp.value; persist(); });
+        inp.addEventListener('keydown', function(e){ if (e.key === 'Enter' && inp.tagName === 'INPUT') { e.preventDefault(); checkCard(c, idx); } });
+      });
+      var btn = c.querySelector('.chk');
+      if (btn) btn.addEventListener('click', function(){ checkCard(c, idx); });
+      if (ins.some(function(i){ return norm(i.value); }) && saved['c' + idx]) checkCard(c, idx);
+      if (btn) btn.addEventListener('click', function(){ saved['c' + idx] = 1; persist(); });
+    }
+  });
+
+  var reset = document.getElementById('resetPractice');
+  if (reset) reset.addEventListener('click', function(){
+    saved = {}; persist(); location.reload();
+  });
+  updScore();
+})();
+
+</script>
+
+<script>
+(function(){
+  var b=document.getElementById('maskBtn'), g=document.getElementById('climGrid');
+  if(!b||!g) return;
+  b.addEventListener('click',function(){
+    var on=!g.classList.contains('masked'); g.classList.toggle('masked',on);
+    b.setAttribute('aria-pressed',on?'true':'false'); b.textContent=on?'顯示全部答案':'遮住答案';
+    g.querySelectorAll('.clim-a').forEach(function(a){ a.classList.remove('shown'); });
+  });
+  g.addEventListener('click',function(e){ var a=e.target.closest('.clim-a'); if(a&&g.classList.contains('masked')) a.classList.toggle('shown'); });
+})();
+</script>
+</body>
+</html>
