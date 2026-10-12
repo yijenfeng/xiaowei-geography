@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>地理藍圖｜筱葳學測地理</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>[hidden]{display:none!important}</style>
+<style>
+  /* Layout: single reading column, PART sections in sequence, English passages set apart as "answer sheet" panels */
+  :root{
+    --bg:#F1F5F9;
+    --surface:#FFFFFF;
+    --surface-2:#E5ECF3;
+    --ink:#1B2733;
+    --ink-muted:#566676;
+    --line:#C9D6E3;
+    --accent:#2B6A99;
+    --accent-ink:#FFFFFF;
+    --accent-soft:#DCE9F4;
+    --amber:#E0973C;  --amber-ink:#3A2306;
+    --teal:#4E9C8C;   --teal-ink:#0B241F;
+    --bad:#B5483B;    --bad-soft:#F6E1DD;
+    --hl-ts:#D3E6F3;  --hl-sup:#DCE8F5;  --hl-ex:#F7E3C6;  --hl-cs:#E9DDF2;
+    --grid-line:rgba(43,106,153,0.07);
+    --shadow:0 1px 2px rgba(28,42,36,0.06), 0 8px 24px rgba(28,42,36,0.05);
+    --f-display:'Noto Serif TC','Songti TC','PMingLiU',serif;
+    --f-body:'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif;
+    --f-en:'Source Serif 4','Georgia','Times New Roman',serif;
+    --f-mono:'JetBrains Mono','Cascadia Code',ui-monospace,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0E1620; --surface:#15212D; --surface-2:#1A2836; --ink:#E5ECF3; --ink-muted:#93A4B6;
+      --line:#2A3A4C; --accent:#86BCE6; --accent-ink:#0B1A12; --accent-soft:#1B3248;
+      --amber:#C97E2E; --amber-ink:#2A1A05; --teal:#3E8776; --teal-ink:#E7F5F1;
+      --bad:#E48A7D; --bad-soft:#3A201C;
+      --hl-ts:#1F3D55; --hl-sup:#22334A; --hl-ex:#4A3519; --hl-cs:#3A2A48;
+      --grid-line:rgba(134,188,230,0.07);
+      --shadow:0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0E1620; --surface:#15212D; --surface-2:#1A2836; --ink:#E5ECF3; --ink-muted:#93A4B6;
+    --line:#2A3A4C; --accent:#86BCE6; --accent-ink:#0B1A12; --accent-soft:#1B3248;
+    --amber:#C97E2E; --amber-ink:#2A1A05; --teal:#3E8776; --teal-ink:#E7F5F1;
+    --bad:#E48A7D; --bad-soft:#3A201C;
+    --hl-ts:#1F3D55; --hl-sup:#22334A; --hl-ex:#4A3519; --hl-cs:#3A2A48;
+    --grid-line:rgba(134,188,230,0.07);
+    --shadow:0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+    color-scheme:dark;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:
+      repeating-linear-gradient(0deg, var(--grid-line) 0 1px, transparent 1px 32px),
+      repeating-linear-gradient(90deg, var(--grid-line) 0 1px, transparent 1px 32px),
+      var(--bg);
+    color:var(--ink);
+    font-family:var(--f-body);
+    font-size:17px;
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  @media (prefers-reduced-motion: reduce){ *{ scroll-behavior:auto !important; transition:none !important; } }
+  h1,h2,h3{ font-family:var(--f-display); font-weight:600; text-wrap:balance; margin:0; color:var(--ink); }
+  a{ color:var(--accent); }
+  p{ margin:0; }
+  :focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+  .mono{ font-family:var(--f-mono); font-variant-numeric:tabular-nums; }
+
+  .page{ max-width:780px; margin:0 auto; padding-inline:1.25rem; padding-block:0 5rem; }
+
+  .back{ display:inline-block; margin-top:1.6rem; font-size:0.85rem; color:var(--ink-muted); text-decoration:none; }
+  .back:hover{ color:var(--accent); }
+
+  .hero{ padding-block:2rem 1.6rem; display:grid; gap:0.9rem; }
+  .eyebrow{
+    justify-self:start;
+    font-family:var(--f-mono); font-size:0.78rem; letter-spacing:0.06em;
+    color:var(--accent); background:var(--accent-soft); border:1px solid var(--line);
+    padding:0.3rem 0.7rem; border-radius:4px;
+  }
+  .hero h1{ font-size:clamp(1.9rem,5vw,2.5rem); line-height:1.25; }
+  .hero .sub{ color:var(--ink-muted); font-size:1.03rem; max-width:640px; }
+
+  .lede{
+    background:var(--surface); border:1px solid var(--line); border-radius:10px;
+    padding:1.1rem 1.3rem; box-shadow:var(--shadow); display:grid; gap:0.9rem;
+  }
+  .toc{ display:flex; flex-wrap:wrap; gap:0.5rem; padding:0; margin:0; list-style:none; }
+  .toc a{
+    display:inline-flex; gap:0.45rem; align-items:center; text-decoration:none;
+    font-size:0.88rem; color:var(--ink); background:var(--surface-2); border:1px solid var(--line);
+    padding:0.25rem 0.75rem; border-radius:999px;
+  }
+  .toc a:hover{ border-color:var(--accent); color:var(--accent); }
+  .toc b{ font-family:var(--f-mono); color:var(--accent); font-weight:700; }
+
+  section.part{ margin-top:3.2rem; display:grid; gap:1.1rem; }
+  .part-kicker{ font-family:var(--f-mono); font-size:0.78rem; letter-spacing:0.08em; color:var(--accent); }
+  .part h2{ font-size:1.55rem; line-height:1.35; }
+  .part h3{ font-size:1.08rem; margin-top:0.4rem; }
+
+  .step{ display:grid; gap:0.5rem; }
+  .step-tag{
+    justify-self:start; font-family:var(--f-mono); font-size:0.72rem; font-weight:700;
+    padding:0.1rem 0.55rem; border-radius:4px; background:var(--surface-2); color:var(--ink-muted); border:1px solid var(--line);
+  }
+  .step-tag.rule{ background:var(--accent); color:var(--accent-ink); border-color:var(--accent); }
+
+  .prompt{
+    background:var(--surface); border:1px solid var(--line); border-left:4px solid var(--amber);
+    border-radius:6px; padding:0.9rem 1.1rem; font-size:0.95rem;
+  }
+  .prompt .label{ font-family:var(--f-mono); font-size:0.72rem; color:var(--amber); font-weight:700; letter-spacing:0.05em; display:block; margin-bottom:0.2rem; }
+
+  .sheet{
+    background:var(--surface); border:1px solid var(--line); border-radius:8px;
+    padding:1rem 1.2rem; box-shadow:var(--shadow);
+    font-family:var(--f-en); font-size:1.06rem; line-height:1.85;
+  }
+  .sheet p + p{ margin-top:0.8rem; }
+  .sheet-head{
+    display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:0.3rem 1rem;
+    font-family:var(--f-mono); font-size:0.75rem; color:var(--ink-muted); margin-bottom:0.5rem;
+  }
+  .sheet.weak{ border-color:var(--bad); }
+  .sheet .err{ text-decoration:underline wavy var(--bad); text-underline-offset:4px; }
+
+  .compare{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:0.9rem; }
+  .compare > *{ min-width:0; }
+
+  .note{
+    background:var(--accent-soft); border:1px solid var(--line); border-radius:8px;
+    padding:0.8rem 1rem; font-size:0.93rem;
+  }
+
+  .table-wrap{ overflow-x:auto; border:1px solid var(--line); border-radius:8px; background:var(--surface); }
+  table{ border-collapse:collapse; width:100%; font-size:0.92rem; min-width:520px; }
+  th,td{ text-align:left; padding:0.6rem 0.85rem; border-bottom:1px solid var(--line); vertical-align:top; }
+  th{ background:var(--surface-2); font-weight:700; font-size:0.85rem; }
+  tr:last-child td{ border-bottom:none; }
+  td.en{ font-family:var(--f-en); font-size:1rem; }
+
+  /* score band bar, drawn to scale 0–20 */
+  .bands{ display:grid; gap:0.4rem; }
+  .band-bar{ display:flex; gap:2px; border-radius:6px; overflow:hidden; height:40px; }
+  .band-bar div{ display:flex; flex-direction:column; align-items:center; justify-content:center; line-height:1.15; font-size:0.78rem; font-weight:700; }
+  .band-bar small{ font-family:var(--f-mono); font-weight:400; font-size:0.68rem; }
+  .b0{ background:var(--bad-soft); color:var(--bad); }
+  .b1{ background:var(--surface-2); color:var(--ink-muted); }
+  .b2{ background:var(--hl-sup); color:var(--ink); }
+  .b3{ background:var(--hl-ts); color:var(--ink); }
+  .b4{ background:var(--accent); color:var(--accent-ink); }
+  .band-scale{ display:flex; justify-content:space-between; font-family:var(--f-mono); font-size:0.7rem; color:var(--ink-muted); }
+
+  /* paragraph anatomy */
+  .anatomy-ctrl{ display:flex; flex-wrap:wrap; gap:0.5rem 1rem; align-items:center; }
+  button.toggle{
+    font:inherit; font-size:0.88rem; cursor:pointer;
+    background:var(--accent); color:var(--accent-ink); border:none; border-radius:6px; padding:0.4rem 0.9rem;
+  }
+  button.toggle[aria-pressed="false"]{ background:var(--surface); color:var(--accent); border:1px solid var(--accent); }
+  .key{ display:flex; flex-wrap:wrap; gap:0.3rem 0.9rem; font-size:0.82rem; color:var(--ink-muted); }
+  .key span{ display:inline-flex; align-items:center; gap:0.35rem; }
+  .key i{ width:12px; height:12px; border-radius:3px; display:inline-block; }
+  .anatomy.on .ts{ background:var(--hl-ts); }
+  .anatomy.on .sup{ background:var(--hl-sup); }
+  .anatomy.on .ex{ background:var(--hl-ex); }
+  .anatomy.on .cs{ background:var(--hl-cs); }
+  .anatomy .ts,.anatomy .sup,.anatomy .ex,.anatomy .cs{ border-radius:3px; padding:0 2px; transition:background .2s ease; box-decoration-break:clone; -webkit-box-decoration-break:clone; }
+  .anatomy .tr{ font-weight:600; }
+  .anatomy.on .tr{ color:var(--accent); }
+
+  .skeleton{ display:grid; gap:0.4rem; counter-reset:sk; }
+  .skeleton div{
+    display:grid; grid-template-columns:7.5rem 1fr; gap:0.8rem; align-items:baseline;
+    padding:0.55rem 0.9rem; border-radius:6px; font-size:0.92rem;
+  }
+  .skeleton div > *{ min-width:0; }
+  .skeleton b{ font-size:0.86rem; }
+  @media (max-width:480px){ .skeleton div{ grid-template-columns:1fr; gap:0.1rem; } }
+
+  ul.clean{ margin:0; padding-left:1.2rem; display:grid; gap:0.3rem; }
+
+  .timeline{ display:flex; gap:2px; border-radius:6px; overflow:hidden; height:46px; }
+  .timeline div{ display:flex; flex-direction:column; justify-content:center; align-items:center; font-size:0.78rem; font-weight:700; line-height:1.15; text-align:center; padding:0 0.2rem; }
+  .timeline small{ font-family:var(--f-mono); font-weight:400; font-size:0.68rem; }
+
+  .checklist{ display:grid; gap:0.35rem; }
+  .checklist label{ display:flex; gap:0.6rem; align-items:flex-start; font-size:0.93rem; cursor:pointer; }
+  .checklist input{ margin-top:0.45rem; accent-color:var(--accent); }
+
+  /* practice */
+  .practice{ margin-top:3.2rem; display:grid; gap:1rem; }
+  .qcard{ background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:1rem 1.2rem; display:grid; gap:0.6rem; }
+  .qhead{ display:flex; gap:0.6rem; align-items:baseline; }
+  .qnum{ font-family:var(--f-mono); font-weight:700; color:var(--accent); flex:none; }
+  .qcard .en{ font-family:var(--f-en); font-size:1.02rem; }
+  .opts{ margin:0; padding-left:1.4rem; font-family:var(--f-en); font-size:1rem; display:grid; gap:0.15rem; }
+  details{ border-top:1px dashed var(--line); padding-top:0.5rem; }
+  summary{ cursor:pointer; color:var(--accent); font-size:0.88rem; font-weight:500; }
+  details .ans{ margin-top:0.5rem; font-size:0.93rem; }
+
+  /* draft box */
+  .draft{ display:grid; gap:0.6rem; }
+  textarea{
+    width:100%; min-height:260px; resize:vertical;
+    font-family:var(--f-en); font-size:1.02rem; line-height:1.75;
+    background:var(--surface); color:var(--ink); border:1px solid var(--line); border-radius:8px; padding:0.9rem 1rem;
+  }
+  textarea:focus{ outline:2px solid var(--accent); outline-offset:1px; }
+  .meters{ display:flex; flex-wrap:wrap; gap:0.5rem; }
+  .meter{ font-family:var(--f-mono); font-size:0.8rem; padding:0.25rem 0.7rem; border-radius:999px; border:1px solid var(--line); background:var(--surface-2); color:var(--ink-muted); }
+  .meter.ok{ background:var(--accent); color:var(--accent-ink); border-color:var(--accent); }
+  .meter.warn{ background:var(--amber); color:var(--amber-ink); border-color:var(--amber); }
+
+  footer{ margin-top:3rem; padding-top:1.5rem; border-top:1px solid var(--line); color:var(--ink-muted); font-size:0.85rem; display:grid; gap:0.4rem; }
+  footer .id{ font-family:var(--f-mono); font-size:0.8rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem; }
+</style>
+<style>
+  .wt td.zh{ transition:filter .2s ease, opacity .2s ease; }
+  .masked td.zh{ filter:blur(6px); opacity:.55; user-select:none; }
+  .masked td.zh:hover,.masked td.zh:focus{ filter:none; opacity:1; }
+  .tools{ display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; font-size:0.85rem; color:var(--ink-muted); }
+  .pair{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:0.8rem; }
+  .pair > *{ min-width:0; }
+  .ex-line{ font-family:var(--f-en); font-size:1.02rem; }
+  .ex-line + .ex-line{ margin-top:0.3rem; }
+  .ok{ color:var(--accent); font-weight:600; }
+  .no{ color:var(--bad); text-decoration:line-through; text-decoration-thickness:1px; }
+  .hl{ background:var(--hl-ex); border-radius:3px; padding:0 2px; }
+  .hl2{ background:var(--hl-ts); border-radius:3px; padding:0 2px; }
+  .hl3{ background:var(--hl-sup); border-radius:3px; padding:0 2px; }
+  .formula{ background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:0.8rem 1.1rem; font-family:var(--f-mono); font-size:0.9rem; line-height:1.9; overflow-x:auto; }
+</style>
+<style>
+  .opt-list{ display:grid; gap:0.4rem; }
+  .opt-btn{
+    display:block; width:100%; text-align:left; cursor:pointer;
+    font-family:var(--f-en); font-size:1rem; line-height:1.5; color:var(--ink);
+    background:var(--surface-2); border:1px solid var(--line); border-radius:6px; padding:0.45rem 0.8rem;
+  }
+  .opt-btn:hover{ border-color:var(--accent); }
+  .opt-btn.right{ background:var(--accent); color:var(--accent-ink); border-color:var(--accent); }
+  .opt-btn.wrong{ background:var(--bad-soft); color:var(--bad); border-color:var(--bad); }
+  .opt-btn:disabled{ cursor:default; }
+  .scorebar{ display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; font-size:0.9rem; color:var(--ink-muted); }
+  .scorebar .meter{ font-size:0.85rem; }
+  .passage{ background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:1rem 1.2rem; font-family:var(--f-en); font-size:1.04rem; line-height:1.9; box-shadow:var(--shadow); }
+  .passage p + p{ margin-top:0.7rem; }
+  .blank{ font-family:var(--f-mono); font-size:0.85rem; font-weight:700; color:var(--accent); background:var(--accent-soft); border-radius:4px; padding:0 0.35rem; }
+  .optgrid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:0.4rem; font-family:var(--f-en); }
+  .optgrid span{ background:var(--surface-2); border:1px solid var(--line); border-radius:6px; padding:0.3rem 0.6rem; }
+  .fill{ width:100%; font:inherit; font-family:var(--f-en); background:var(--surface); color:var(--ink); border:1px solid var(--line); border-radius:6px; padding:0.4rem 0.6rem; }
+  .fill:focus{ outline:2px solid var(--accent); outline-offset:1px; }
+  .panels{ display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:0.6rem; }
+  .panel{ background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:0.7rem 0.8rem; font-size:0.9rem; }
+  .panel b{ font-family:var(--f-mono); color:var(--accent); display:block; font-size:0.78rem; }
+  .log-form{ display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:0.6rem; align-items:end; }
+  .log-form label{ display:grid; gap:0.2rem; font-size:0.82rem; color:var(--ink-muted); }
+  select.fill{ appearance:auto; }
+</style>
+<style>
+  .chk-row{ display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; }
+  textarea.ans-in{ min-height:0; resize:vertical; font-size:1rem; line-height:1.6; padding:0.5rem 0.7rem; }
+  .verdict{ font-size:0.9rem; display:grid; gap:0.35rem; }
+  .verdict:empty{ display:none; }
+  .vd{ display:inline-block; font-weight:700; font-size:0.85rem; padding:0.1rem 0.6rem; border-radius:999px; }
+  .vd.good{ background:var(--accent); color:var(--accent-ink); }
+  .vd.bad{ background:var(--bad-soft); color:var(--bad); }
+  .vd.warn{ background:var(--surface-2); color:var(--ink-muted); }
+  .dx{ display:grid; gap:0.25rem; font-family:var(--f-en); font-size:1rem; background:var(--surface-2); border-radius:6px; padding:0.5rem 0.75rem; }
+  .dx b{ font-family:var(--f-body); font-size:0.75rem; color:var(--ink-muted); display:inline-block; min-width:4.5rem; }
+  .dx-bad{ color:var(--bad); text-decoration:underline wavy var(--bad); text-underline-offset:3px; }
+  .dx-good{ color:var(--accent); font-weight:600; text-decoration:underline; text-underline-offset:3px; }
+  .dx-note{ font-size:0.8rem; color:var(--ink-muted); }
+  td .verdict{ margin-top:0.3rem; }
+</style>
+<style>
+  /* history additions: vertical chronology, primary-source boxes */
+  .chron{ list-style:none; margin:0.8rem 0 0; padding:0 0 0 0.2rem; display:grid; gap:0; }
+  .chron li{ display:grid; grid-template-columns:5.6rem 1fr; gap:0.9rem; position:relative; padding:0.35rem 0 0.55rem; }
+  .chron li > *{ min-width:0; }
+  .chron li::before{ content:''; position:absolute; left:6.05rem; top:0; bottom:0; width:2px; background:var(--line); }
+  .chron li::after{ content:''; position:absolute; left:calc(6.05rem - 4px); top:0.85rem; width:10px; height:10px; border-radius:50%; background:var(--surface); border:2px solid var(--accent); }
+  .chron li.turn::after{ background:var(--accent); }
+  .chron .yr{ font-family:var(--f-mono); font-variant-numeric:tabular-nums; font-size:0.82rem; font-weight:700; color:var(--accent); text-align:right; padding-top:0.15rem; }
+  .chron .ev{ padding-left:0.9rem; font-size:0.95rem; line-height:1.65; }
+  .chron .ev small{ display:block; color:var(--ink-muted); font-size:0.82rem; }
+  @media (max-width:480px){
+    .chron li{ grid-template-columns:4.4rem 1fr; gap:0.6rem; }
+    .chron li::before{ left:4.75rem; } .chron li::after{ left:calc(4.75rem - 4px); }
+  }
+  .src{ background:var(--surface-2); border:1px solid var(--line); border-left:4px solid var(--amber); border-radius:6px; padding:0.7rem 1rem; font-family:var(--f-display); font-size:1rem; line-height:1.85; margin:0; }
+  .src cite{ display:block; font-style:normal; font-family:var(--f-body); font-size:0.78rem; color:var(--ink-muted); margin-top:0.3rem; }
+  .qcard .qtext{ margin:0; }
+  textarea.fill{ font-family:var(--f-body); }
+  .kwtag{ font-family:var(--f-mono); font-size:0.75rem; background:var(--accent-soft); color:var(--accent); border:1px solid var(--line); border-radius:4px; padding:0.05rem 0.4rem; white-space:nowrap; }
+</style>
+<style>
+  /* blueprint: three acts stacked top to bottom, each a row of numbered question cards */
+  .bp{ display:grid; gap:0.4rem; }
+  .act{ background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:0.9rem 1rem 1rem; box-shadow:var(--shadow); display:grid; gap:0.7rem; }
+  .act-h{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:0.2rem 0.8rem; }
+  .act-h b{ font-family:var(--f-display); font-size:1.12rem; }
+  .act-h span{ font-family:var(--f-mono); font-size:0.75rem; color:var(--ink-muted); }
+  .act-h p{ flex-basis:100%; margin:0; font-size:0.88rem; color:var(--ink-muted); }
+  .nodes{ display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:0.5rem; counter-reset:none; }
+  .node{ border:1px solid var(--line); background:var(--surface-2); border-radius:8px; padding:0.6rem 0.75rem; display:grid; gap:0.15rem; align-content:start; position:relative; min-width:0; }
+  .node .n{ font-family:var(--f-mono); font-size:0.72rem; font-weight:700; color:var(--accent); }
+  .node .q{ font-family:var(--f-display); font-weight:600; font-size:1.05rem; line-height:1.4; }
+  .node .t{ font-size:0.8rem; color:var(--ink-muted); line-height:1.5; }
+  .node .lk{ font-size:0.8rem; display:flex; flex-wrap:wrap; gap:0.1rem 0.6rem; margin-top:0.2rem; }
+  .node .lk a{ text-decoration:none; }
+  .node .lk a:hover{ text-decoration:underline; }
+  .node.region .q{ font-size:1rem; }
+  .node.region .t{ color:var(--ink); }
+  .link-down{ text-align:center; font-size:0.85rem; color:var(--accent); font-weight:500; padding:0.15rem 0; }
+  .link-down::before{ content:'↓ '; font-size:1.1rem; }
+  .oneline{ font-size:1rem; line-height:2; }
+  .oneline b{ background:linear-gradient(transparent 55%, var(--hl-ex) 55%); }
+  .ask3{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:0.5rem; }
+  .ask3 div{ background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:0.7rem 0.85rem; display:grid; gap:0.15rem; }
+  .ask3 b{ font-family:var(--f-display); font-size:1.1rem; }
+  .ask3 span{ font-size:0.85rem; color:var(--ink-muted); }
+</style></head>
+
+<style>
+  /* geography additions */
+  .chain .yr{ font-family:var(--f-body); font-size:0.8rem; }
+  .fig{ background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:0.8rem 1rem; box-shadow:var(--shadow); display:grid; gap:0.4rem; }
+  .fig svg{ width:100%; height:auto; display:block; }
+  .fig figcaption{ font-size:0.82rem; color:var(--ink-muted); }
+  .fig text{ font-family:var(--f-body); }
+  .twocol{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:0.8rem; }
+  .twocol > *{ min-width:0; }
+  .card-mini{ background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:0.7rem 0.9rem; font-size:0.92rem; }
+  .card-mini b{ display:block; font-family:var(--f-display); font-size:1rem; margin-bottom:0.2rem; }
+</style>
+<body>
+<div class="page">
+<a class="back" href="index.html">← 回到地理學習地圖</a>
+<header class="hero">
+  <span class="eyebrow">第 0 課・先看這張</span>
+  <h1>地理藍圖</h1>
+  <p class="sub">開始讀之前，先看整張地圖。高中地理三冊、十二個單元，其實只在講一件事：地球給了條件，人類做出選擇。之後每讀一課，都回來看看它在這張圖的哪一格。</p>
+</header>
+<div class="lede"><p>這一節回答一個問題：「高中地理到底在學什麼？」</p><ul class="toc"><li><a href="#p1"><b>1</b>一句話</a></li><li><a href="#p2"><b>2</b>藍圖</a></li><li><a href="#p3"><b>3</b>走一次</a></li><li><a href="#p4"><b>4</b>怎麼用</a></li><li><a href="#practice"><b>✎</b>練習</a></li></ul></div>
+<section class="part" id="p1"><span class="part-kicker">PART 1 ・ 一句話</span><h2>地理只問三個問題</h2><div class="ask3"><div><b>① 在哪裡？</b><span>先定位：緯度、海陸、地形高低</span></div><div><b>② 為什麼在那裡？</b><span>用自然條件解釋：氣候、地形、水</span></div><div><b>③ 會造成什麼？</b><span>推到人類：人口、農業、產業、貿易</span></div></div><div class="note"><b>每一題都能照這個順序想。</b>題目給你一個地方、一張圖或一段新聞，先問「在哪裡」，再問「為什麼」，最後問「會怎樣」。</div></section><section class="part" id="p2"><span class="part-kicker">PART 2 ・ 藍圖</span><h2>一張圖：三幕、七個問題</h2><div class="bp"><div class="act"><div class="act-h"><b>第一幕　地球出題</b><span>自然地理・第 1–4 週</span><p>地球先決定這個地方的條件：在哪裡、多冷多熱、多乾多濕、地形和水長什麼樣子。</p></div><div class="nodes"><div class="node"><span class="n">1・位置</span><span class="q">我在哪？</span><span class="t">經緯度、時差、比例尺、等高線、GIS</span><span class="lk"><a href="g-tools.html">地理技能 →</a><a href="story-s1.html">故事 S1</a></span></div><div class="node"><span class="n">2・氣候</span><span class="q">冷還是熱？乾還是濕？</span><span class="t">太陽、氣壓與風、季風、洋流、氣候圖</span><span class="lk"><a href="g-climate.html">天氣與氣候 →</a><a href="climate-atlas.html">氣候圖速查 →</a><a href="story-s2.html">故事 S2</a><a href="story-s3.html">故事 S3</a></span></div><div class="node"><span class="n">3・地形與水</span><span class="q">地表長什麼樣？水去哪？</span><span class="t">板塊、河流三段、海岸、淹水、土壤</span><span class="lk"><a href="g-landform.html">地形 →</a><a href="g-hydro.html">水文與生態 →</a><a href="story-s4.html">故事 S4</a></span></div></div></div><div class="link-down">自然條件，決定人類能怎麼生活</div><div class="act"><div class="act-h"><b>第二幕　人類作答</b><span>人文地理・第 5–8 週</span><p>人類在這些條件下做選擇：住哪裡、種什麼、做什麼工作、怎麼和世界做生意。</p></div><div class="nodes"><div class="node"><span class="n">4・人口與都市</span><span class="q">人住在哪？</span><span class="t">人口分布、人口轉型、遷移、都市、中地</span><span class="lk"><a href="h-population.html">人口與聚落 →</a><a href="story-s5.html">故事 S5</a><a href="story-s8.html">故事 S8</a></span></div><div class="node"><span class="n">5・農業</span><span class="q">吃什麼？</span><span class="t">水稻與小麥、集約與粗放、杜能、栽培業</span><span class="lk"><a href="h-agri.html">農業 →</a><a href="story-s6.html">故事 S6</a></span></div><div class="node"><span class="n">6・工業</span><span class="q">做什麼工作？</span><span class="t">區位導向、外移、群聚、微笑曲線</span><span class="lk"><a href="h-industry.html">工業與服務業 →</a><a href="story-s7.html">故事 S7</a></span></div><div class="node"><span class="n">7・全球化</span><span class="q">怎麼跟世界連？</span><span class="t">時空壓縮、國際分工、核心邊陲、區域整合</span><span class="lk"><a href="h-global.html">全球化與區域發展 →</a><a href="story-s9.html">故事 S9</a></span></div></div></div><div class="link-down">把前兩幕放到世界各地</div><div class="act"><div class="act-h"><b>第三幕　各地的答案卷</b><span>世界區域・第 9–12 週</span><p>每個區域都是同一條鏈的一個例子。讀區域時，只要找出它的「第一個原因」，後面都推得出來。</p></div><div class="nodes"><div class="node region"><span class="n">區域</span><span class="q">季風亞洲</span><span class="t">季風 → 水稻 → 人口密集</span><span class="lk"><a href="r-asia.html">讀教材 →</a><a href="story-s10.html">故事 S10</a></span></div><div class="node region"><span class="n">區域</span><span class="q">乾燥世界</span><span class="t">副熱帶高壓 → 沙漠 → 綠洲、石油</span><span class="lk"><a href="r-dry.html">讀教材 →</a><a href="story-s10.html">故事 S10</a></span></div><div class="node region"><span class="n">區域</span><span class="q">歐洲與俄羅斯</span><span class="t">西風＋暖流 → 溫和多雨；越往東越冷</span><span class="lk"><a href="r-europe.html">讀教材 →</a><a href="story-s10.html">故事 S10</a></span></div><div class="node region"><span class="n">區域</span><span class="q">美洲與大洋洲</span><span class="t">南北向山脈 → 冷暖氣團相撞；澳洲內陸乾</span><span class="lk"><a href="r-america.html">讀教材 →</a><a href="story-s10.html">故事 S10</a></span></div></div></div></div><p class="oneline">一行背起來：<b>我在哪</b> → <b>冷熱乾濕</b> → <b>地表與水</b> → <b>人住哪</b> → <b>吃什麼</b> → <b>做什麼工作</b> → <b>怎麼連上世界</b></p></section><section class="part" id="p3"><span class="part-kicker">PART 3 ・ 走一次</span><h2>用台灣把整條鏈走一遍</h2><ol class="chron chain"><li class="turn"><span class="yr">1 位置</span><span class="ev">北緯約 23°–25°，在亞洲大陸東邊、太平洋西邊<small>北回歸線經過，又是大陸和大洋的交界</small></span></li><li><span class="yr">2 氣候</span><span class="ev">夏天吹西南季風、有颱風；冬天吹東北季風<small>北部冬天迎風多雨，南部冬天背風乾燥</small></span></li><li><span class="yr">3 地形與水</span><span class="ev">板塊擠壓，山又高又陡；河短流急，西部堆出沖積平原<small>這也是為什麼台灣多地震、易有土石流</small></span></li><li class="turn"><span class="yr">4 人口</span><span class="ev">人口集中在西部平原<small>平坦、有水、交通方便</small></span></li><li><span class="yr">5 農業</span><span class="ev">高溫多雨，適合種水稻<small>季風 → 雨熱同期 → 水稻 → 養活很多人</small></span></li><li><span class="yr">6 工業</span><span class="ev">人才、大學、供應鏈聚在新竹 → 半導體群聚<small>勞力密集的工廠則外移到東南亞</small></span></li><li class="turn"><span class="yr">7 全球化</span><span class="ev">晶片賣到全世界，台灣在全球供應鏈的關鍵位置<small>所以國際情勢一變，台灣就受影響</small></span></li></ol><div class="note"><b>這就是學測題的樣子。</b>一個題組常常從其中一格開始，再往前或往後問一兩格。你只要知道自己站在哪一格，就知道下一步往哪裡推。</div></section><section class="part" id="p4"><span class="part-kicker">PART 4 ・ 怎麼用</span><h2>讀每一課時做三件事</h2><ul class="clean"><li><b>開課前：</b>看頁面最上面的「藍圖位置」，知道這一課在第幾格。</li><li><b>讀的時候：</b>問自己「它的原因在前一格的哪裡？它會影響後一格的什麼？」</li><li><b>寫題目時：</b>不要先問「這個我有沒有背過」，而是問「它在這條鏈的哪一段」。</li><li><b>想先聽故事：</b><a href="earth-drama.html">《地球生存遊戲》</a>把這七格拍成十季連續劇，每一季對應藍圖的一格。</li></ul></section>
+
+<section class="practice" id="practice"><span class="part-kicker">練習</span><h2>動手試試看</h2><div class="scorebar"><span>選擇題點選答案、簡答題按「對答案」，作答紀錄會保留在這台裝置。</span><span class="meter" id="score"></span><button class="toggle" type="button" id="resetPractice" aria-pressed="false">清除作答</button></div><div class="qcard mcq" data-ans="B"><div class="qhead"><span class="qnum">Q1</span><span>「撒哈拉為什麼是沙漠？」這個問題在藍圖的哪一格？</span></div><div class="opt-list"><button class="opt-btn" type="button" data-k="A">(A) 我在哪</button><button class="opt-btn" type="button" data-k="B">(B) 冷熱乾濕（氣候）</button><button class="opt-btn" type="button" data-k="C">(C) 吃什麼（農業）</button><button class="opt-btn" type="button" data-k="D">(D) 怎麼連上世界（全球化）</button></div><details><summary>看解析</summary><div class="ans"><b>B。</b>乾不乾是氣候問題：撒哈拉在副熱帶高壓底下，空氣下沉，所以乾燥。</div></details></div><div class="qcard mcq" data-ans="B"><div class="qhead"><span class="qnum">Q2</span><span>「為什麼沖積扇的扇端有湧泉？」在哪一格？</span></div><div class="opt-list"><button class="opt-btn" type="button" data-k="A">(A) 氣候</button><button class="opt-btn" type="button" data-k="B">(B) 地形與水</button><button class="opt-btn" type="button" data-k="C">(C) 人口</button><button class="opt-btn" type="button" data-k="D">(D) 工業</button></div><details><summary>看解析</summary><div class="ans"><b>B。</b>這是河流堆積與地下水的問題，屬於「地表長什麼樣、水去哪」。</div></details></div><div class="qcard mcq" data-ans="C"><div class="qhead"><span class="qnum">Q3</span><span>「為什麼成衣廠從中國搬到越南？」在哪一格？</span></div><div class="opt-list"><button class="opt-btn" type="button" data-k="A">(A) 農業</button><button class="opt-btn" type="button" data-k="B">(B) 人口</button><button class="opt-btn" type="button" data-k="C">(C) 工業</button><button class="opt-btn" type="button" data-k="D">(D) 氣候</button></div><details><summary>看解析</summary><div class="ans"><b>C。</b>工廠設在哪裡、為什麼搬家，是工業區位的問題。</div></details></div><div class="qcard mcq" data-ans="C"><div class="qhead"><span class="qnum">Q4</span><span>「為什麼季風亞洲人口特別多？」最完整的想法是？</span></div><div class="opt-list"><button class="opt-btn" type="button" data-k="A">(A) 只跟人口有關</button><button class="opt-btn" type="button" data-k="B">(B) 只跟氣候有關</button><button class="opt-btn" type="button" data-k="C">(C) 從氣候一路推到農業，再推到人口</button><button class="opt-btn" type="button" data-k="D">(D) 只跟全球化有關</button></div><details><summary>看解析</summary><div class="ans"><b>C。</b>季風帶來雨熱同期 → 適合水稻 → 單位面積養活很多人 → 人口密集。一題橫跨三格，這正是藍圖的用法。</div></details></div><div class="qcard mcq" data-ans="B"><div class="qhead"><span class="qnum">Q5</span><span>讀到一個沒學過的地方，第一步最應該做什麼？</span></div><div class="opt-list"><button class="opt-btn" type="button" data-k="A">(A) 直接背它的特產</button><button class="opt-btn" type="button" data-k="B">(B) 先定位：緯度、海陸、地形</button><button class="opt-btn" type="button" data-k="C">(C) 先看它的人口數</button><button class="opt-btn" type="button" data-k="D">(D) 先記它的首都</button></div><details><summary>看解析</summary><div class="ans"><b>B。</b>地理的第一個問題永遠是「在哪裡」，位置會一路影響後面每一格。</div></details></div><div class="qcard txt"><div class="qhead"><span class="qnum">Q6</span><span>用藍圖的順序，說明為什麼台灣西部的人口比東部多。</span></div><textarea class="fill ans-in" rows="3" id="bp-k6" autocomplete="off" spellcheck="false" aria-label="作答" placeholder="用一到兩句話寫下你的答案" data-kw="[[&quot;平原&quot;, &quot;沖積&quot;, &quot;平坦&quot;], [&quot;人口&quot;, &quot;集中&quot;, &quot;居住&quot;, &quot;聚落&quot;]]"></textarea><div class="verdict" data-for="bp-k6"></div><div class="chk-row"><button class="toggle chk" type="button">對答案</button></div><details><summary>看參考答案與解析</summary><div class="ans"><p class="ex-line">台灣東部山地多、平地少；西部有河流堆積出的沖積平原，地勢平坦、有水、交通方便，適合耕作與居住，所以人口集中在西部。</p><p style="margin-top:0.3rem">從「地形與水」那一格開始，推到「人住哪」那一格。</p><p style="margin-top:0.3rem;font-size:0.85rem;color:var(--ink-muted)">系統只檢查是否寫到關鍵詞：<span class="kwtag">平原 / 沖積 / 平坦</span>　<span class="kwtag">人口 / 集中 / 居住 / 聚落</span>（每組至少寫到一個）。寫得通順、因果清楚才是得分關鍵，請對照參考答案。</p></div></details></div></section>
+<section class="part"><span class="part-kicker">本節重點</span><ul class="clean"><li>地理只問三個問題：在哪裡、為什麼在那裡、會造成什麼。</li><li>三幕：地球出題（自然）→ 人類作答（人文）→ 各地的答案卷（區域）。</li><li>七格：我在哪 → 冷熱乾濕 → 地表與水 → 人住哪 → 吃什麼 → 做什麼工作 → 怎麼連上世界。</li><li>遇到陌生題目，先找它在哪一格，再往前找原因、往後推影響。</li></ul></section>
+<footer>
+  <p>練習題的情境、圖表與數據為教學用自編或示意，不是原始統計；內容依部定必修地理課程整理。正式考試範圍以大考中心公告為準。</p>
+  <div class="id"><span>筱葳學測地理</span><span>第 0 課 地理藍圖</span></div>
+</footer>
+</div>
+</div>
+<script>
+(function(){
+  var PAGE = (document.querySelector('.eyebrow') || {}).textContent || location.pathname;
+  var SKEY = 'geo-practice-v1:' + PAGE;
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(SKEY) || '{}') || {}; } catch (e) { saved = {}; }
+  function persist(){ try { localStorage.setItem(SKEY, JSON.stringify(saved)); } catch (e) {} }
+
+  var cards = [].slice.call(document.querySelectorAll('.qcard.mcq[data-ans], .qcard.txt'));
+  var state = {};
+  var sb = document.getElementById('score');
+  function updScore(){
+    if (!sb) return;
+    var ok = 0, done = 0;
+    cards.forEach(function(c, i){ if (state[i] !== undefined) { done++; if (state[i]) ok++; } });
+    sb.textContent = '答對 ' + ok + ' / ' + cards.length + (done === cards.length && cards.length ? '・全部完成' : '');
+    sb.className = 'meter ' + (done === cards.length && cards.length ? (ok / cards.length >= 0.8 ? 'ok' : 'warn') : '');
+  }
+
+  /* ---------- multiple choice ---------- */
+  function lockMcq(q, k, idx){
+    var ans = q.getAttribute('data-ans');
+    var btn = q.querySelector('.opt-btn[data-k="' + k + '"]');
+    if (!btn) return;
+    if (k === ans) btn.classList.add('right');
+    else { btn.classList.add('wrong'); var r = q.querySelector('.opt-btn[data-k="' + ans + '"]'); if (r) r.classList.add('right'); }
+    q.querySelectorAll('.opt-btn').forEach(function(x){ x.disabled = true; });
+    var d = q.querySelector('details'); if (d) d.open = true;
+    state[idx] = (k === ans);
+  }
+
+  /* ---------- text answers ---------- */
+  function expand(s){
+    return s.replace(/[’‘`]/g, "'")
+      .replace(/\b(won)'t\b/g, 'will not').replace(/\bcan't\b/g, 'can not').replace(/\bcannot\b/g, 'can not')
+      .replace(/n't\b/g, ' not')
+      .replace(/\b(it|that|there|what|he|she|who)'s\b/g, '$1 is')
+      .replace(/'re\b/g, ' are').replace(/'ve\b/g, ' have').replace(/'ll\b/g, ' will').replace(/\bi'm\b/g, 'i am');
+  }
+  function norm(s){
+    s = expand(String(s).toLowerCase());
+    s = s.replace(/[（）()「」『』“”"]/g, ' ')
+         .replace(/[，。、！？；：,.!?;:／\/|]/g, ' ')
+         .replace(/(\w)-(\w)/g, '$1$2')
+         .replace(/\s+/g, ' ').trim();
+    return s;
+  }
+  function toks(s){ return norm(s) ? norm(s).split(' ') : []; }
+  function lcs(a, b){
+    var m = a.length, n = b.length, dp = [], i, j;
+    for (i = 0; i <= m; i++) { dp.push(new Array(n + 1).fill(0)); }
+    for (i = m - 1; i >= 0; i--) for (j = n - 1; j >= 0; j--)
+      dp[i][j] = a[i] === b[j] ? dp[i + 1][j + 1] + 1 : Math.max(dp[i + 1][j], dp[i][j + 1]);
+    var ka = {}, kb = {}; i = 0; j = 0;
+    while (i < m && j < n) {
+      if (a[i] === b[j]) { ka[i] = 1; kb[j] = 1; i++; j++; }
+      else if (dp[i + 1][j] >= dp[i][j + 1]) i++; else j++;
+    }
+    return { len: dp[0][0], ka: ka, kb: kb };
+  }
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function judge(inp){
+    var val = inp.value;
+    if (!norm(val)) return { empty: true };
+    var kw = inp.getAttribute('data-kw');
+    if (kw) {
+      var groups = JSON.parse(kw), low = val.toLowerCase();
+      var ok = groups.every(function(g){ return g.some(function(w){ return low.indexOf(String(w).toLowerCase()) !== -1; }); });
+      return { kw: true, ok: ok };
+    }
+    var accepts = (inp.getAttribute('data-accept') || '').split('||').filter(Boolean);
+    var you = toks(val), best = null;
+    for (var i = 0; i < accepts.length; i++) {
+      var ref = toks(accepts[i]);
+      if (ref.join(' ') === you.join(' ')) return { ok: true, exact: true };
+      var r = lcs(you, ref), sim = (2 * r.len) / (you.length + ref.length || 1);
+      if (!best || sim > best.sim) best = { sim: sim, r: r, ref: ref, raw: accepts[i] };
+    }
+    return { ok: false, best: best, you: you };
+  }
+  function render(inp, res){
+    var v = inp.parentNode.querySelector('.verdict[data-for="' + inp.id + '"]');
+    if (!v) return;
+    if (res.empty) { v.innerHTML = '<span class="vd warn">還沒有作答</span>'; return; }
+    if (res.ok && res.kw) { v.innerHTML = '<span class="vd good">✓ 關鍵答案正確</span>　請再看下方解析確認說法。'; return; }
+    if (res.ok) { v.innerHTML = '<span class="vd good">✓ 和標準答案相同</span>'; return; }
+    if (res.kw) { v.innerHTML = '<span class="vd bad">✗ 還沒寫到關鍵答案</span>　看看下方解析。'; return; }
+    var b = res.best, you = res.you;
+    var yl = you.map(function(t, i){ return b.r.ka[i] ? esc(t) : '<span class="dx-bad">' + esc(t) + '</span>'; }).join(' ');
+    var rl = b.ref.map(function(t, i){ return b.r.kb[i] ? esc(t) : '<span class="dx-good">' + esc(t) + '</span>'; }).join(' ');
+    v.innerHTML = '<span class="vd bad">✗ 和標準答案不同（相似度 ' + Math.round(b.sim * 100) + '%）</span>' +
+      '<div class="dx"><div><b>你的答案</b>' + yl + '</div><div><b>標準答案</b>' + rl + '</div></div>' +
+      '<p class="dx-note">紅色是和標準答案不同的字，綠色是標準答案有、你沒寫到的字。大小寫與標點不影響比對；翻譯和改寫可能有其他正確寫法，請對照解析判斷。</p>';
+  }
+  function checkCard(c, idx){
+    var ins = [].slice.call(c.querySelectorAll('.ans-in'));
+    var all = true, any = false;
+    ins.forEach(function(inp){ var r = judge(inp); render(inp, r); if (!r.empty) any = true; if (!r.ok) all = false; });
+    if (any) state[idx] = all;
+    var d = c.querySelector('details'); if (d && any) d.open = true;
+    updScore();
+  }
+
+  cards.forEach(function(c, idx){
+    if (c.classList.contains('mcq')) {
+      var answered = false;
+      c.querySelectorAll('.opt-btn').forEach(function(b){
+        b.addEventListener('click', function(){
+          if (answered) return; answered = true;
+          lockMcq(c, b.getAttribute('data-k'), idx);
+          saved['m' + idx] = b.getAttribute('data-k'); persist(); updScore();
+        });
+      });
+      if (saved['m' + idx]) { answered = true; lockMcq(c, saved['m' + idx], idx); }
+    } else {
+      var ins = [].slice.call(c.querySelectorAll('.ans-in'));
+      ins.forEach(function(inp, k){
+        if (!inp.id) inp.id = 'q' + idx + '_' + k;
+        var key = 't' + idx + '_' + k;
+        if (saved[key]) inp.value = saved[key];
+        inp.addEventListener('input', function(){ saved[key] = inp.value; persist(); });
+        inp.addEventListener('keydown', function(e){ if (e.key === 'Enter' && inp.tagName === 'INPUT') { e.preventDefault(); checkCard(c, idx); } });
+      });
+      var btn = c.querySelector('.chk');
+      if (btn) btn.addEventListener('click', function(){ checkCard(c, idx); });
+      if (ins.some(function(i){ return norm(i.value); }) && saved['c' + idx]) checkCard(c, idx);
+      if (btn) btn.addEventListener('click', function(){ saved['c' + idx] = 1; persist(); });
+    }
+  });
+
+  var reset = document.getElementById('resetPractice');
+  if (reset) reset.addEventListener('click', function(){
+    saved = {}; persist(); location.reload();
+  });
+  updScore();
+})();
+
+</script>
+
+</body>
+</html>

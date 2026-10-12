@@ -316,7 +316,17 @@
   .card-mini{ background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:0.7rem 0.9rem; font-size:0.92rem; }
   .card-mini b{ display:block; font-family:var(--f-display); font-size:1rem; margin-bottom:0.2rem; }
 </style>
-</head>
+<style>
+  .bp-strip{ margin:0 0 1.2rem; display:grid; gap:0.35rem; }
+  .bp-strip .lab{ font-family:var(--f-mono); font-size:0.72rem; letter-spacing:0.05em; color:var(--ink-muted); }
+  .bp-strip .lab a{ color:var(--accent); text-decoration:none; }
+  .bp-row{ display:flex; flex-wrap:wrap; gap:0.25rem; align-items:center; font-size:0.78rem; }
+  .bp-row a, .bp-row span.c{ text-decoration:none; color:var(--ink-muted); border:1px solid var(--line); background:var(--surface); border-radius:999px; padding:0.1rem 0.55rem; white-space:nowrap; }
+  .bp-row a:hover{ border-color:var(--accent); color:var(--accent); }
+  .bp-row .on{ background:var(--accent); color:var(--accent-ink) !important; border-color:var(--accent); font-weight:700; }
+  .bp-row i{ font-style:normal; color:var(--line); }
+  .bp-row .g{ font-family:var(--f-mono); font-size:0.7rem; color:var(--ink-muted); margin-right:0.15rem; }
+</style></head>
 <body>
 <div class="page">
 <a class="back" href="index.html">← 回到地理學習地圖</a>
@@ -325,6 +335,7 @@
   <h1>地形</h1>
   <p class="sub">第 2 週。地形題考的是「成因」：內營力把地表推高，外營力把它削低填平。看到地形先問它是怎麼來的。</p>
 </header>
+<nav class="bp-strip" aria-label="藍圖位置"><span class="lab">藍圖位置：你現在在亮起來的那一格・<a href="blueprint.html">看完整藍圖 →</a></span><div class="bp-row"><span class="g">自然</span><a href="g-tools.html">1 位置</a><i>›</i><a href="g-climate.html">2 氣候</a><i>›</i><a class="on" href="g-landform.html">3 地形與水</a></div><div class="bp-row"><span class="g">人文</span><a href="h-population.html">4 人口與都市</a><i>›</i><a href="h-agri.html">5 農業</a><i>›</i><a href="h-industry.html">6 工業</a><i>›</i><a href="h-global.html">7 全球化</a></div><div class="bp-row"><span class="g">區域</span><a href="r-asia.html">季風亞洲</a><a href="r-dry.html">乾燥世界</a><a href="r-europe.html">歐洲與俄羅斯</a><a href="r-america.html">美洲與大洋洲</a></div></nav>
 <div class="lede"><p class="storylink" style="margin:0;font-size:0.9rem">故事版：先看 <a href="story-s4.html">第四季《水開始改造世界》</a>，再讀這份教材。</p><p>這一節回答一個問題：「台灣為什麼多山、多地震、河短流急？」</p><ul class="toc"><li><a href="#p1"><b>1</b>因果鏈</a></li><li><a href="#p2"><b>2</b>地形比較</a></li><li><a href="#p3"><b>3</b>線索速查</a></li><li><a href="#practice"><b>✎</b>練習</a></li></ul></div>
 <section class="part" id="p1"><span class="part-kicker">PART 1 ・ 因果鏈</span><h2>內營力造起伏，外營力削高填低</h2><ol class="chron chain"><li class="turn"><span class="yr">內營力</span><span class="ev">板塊運動：張裂、聚合、錯動<small>聚合處形成褶曲山脈、海溝、火山與島弧；張裂處形成裂谷、中洋脊</small></span></li><li><span class="yr">外營力</span><span class="ev">風化 → 侵蝕 → 搬運 → 堆積<small>動力來自流水、冰河、風、波浪；石灰岩區還有溶蝕</small></span></li><li><span class="yr">結果</span><span class="ev">內營力使地表起伏變大，外營力使起伏變小</span></li><li class="turn"><span class="yr">台灣</span><span class="ev">位於歐亞板塊與菲律賓海板塊的聚合帶<small>地震多、山地高聳、坡陡；加上雨多且集中，侵蝕旺盛、河川含沙量高</small></span></li></ol></section><section class="part" id="p2"><span class="part-kicker">PART 2 ・ 地形比較</span><h2>成因不同，樣子就不同</h2><div class="table-wrap"><table><thead><tr><th>地形</th><th>成因</th><th>特徵</th><th>代表地區</th></tr></thead><tbody><tr><td>沖積扇</td><td>河流出山口，坡度驟減，泥沙堆積</td><td>扇形；扇頂顆粒粗、扇端細，扇端多湧泉</td><td>台灣西部山麓、濁水溪出山處</td></tr><tr><td>三角洲</td><td>河口流速變慢，泥沙多且潮差小</td><td>土壤肥沃、地勢低平，人口密集</td><td>長江、尼羅河、湄公河</td></tr><tr><td>河口灣</td><td>潮差大或泥沙少，泥沙被沖走</td><td>喇叭狀河口，利於港口</td><td>泰晤士河、亞馬遜河口</td></tr><tr><td>曲流、牛軛湖</td><td>中下游側蝕與堆積</td><td>河道蜿蜒，截彎取直後留下牛軛湖</td><td>各大河中下游</td></tr><tr><td>峽灣</td><td>冰河侵蝕成 U 形谷，冰退後海水入侵</td><td>深而窄、兩岸陡峭</td><td>挪威、紐西蘭南島</td></tr><tr><td>岩岸</td><td>波浪侵蝕</td><td>岬角、海蝕洞、海蝕平台</td><td>台灣北部、東北角</td></tr><tr><td>沙岸</td><td>波浪與沿岸流堆積</td><td>沙洲、潟湖、沙嘴</td><td>台灣西南部（七股潟湖）</td></tr><tr><td>喀斯特</td><td>石灰岩被含二氧化碳的水溶蝕</td><td>溶洞、石筍、地下河、峰林</td><td>中國廣西、墾丁</td></tr></tbody></table></div><div class="step"><span class="step-tag">觀察</span><p>河階代表河流「重新往下切」：地盤抬升或海平面下降，讓河流侵蝕力變強，舊的河床被留在高處成為階地。</p></div></section><section class="part" id="p3"><span class="part-kicker">PART 3 ・ 線索速查</span><h2>看到這些字，就知道是哪一種地形</h2><div class="step"><span class="step-tag rule">規律 → 成因判斷</span></div><div class="table-wrap"><table><thead><tr><th>題目中出現</th><th>地形與成因</th></tr></thead><tbody><tr><td>扇頂、扇端、湧泉、礫石</td><td>沖積扇（坡度驟減堆積）</td></tr><tr><td>U 形谷、冰斗、峽灣</td><td>冰河侵蝕</td></tr><tr><td>溶洞、石灰岩、地下河</td><td>喀斯特（溶蝕）</td></tr><tr><td>沙洲、潟湖、養殖</td><td>沙岸（堆積）</td></tr><tr><td>海蝕洞、岬角、海蝕平台</td><td>岩岸（侵蝕）</td></tr><tr><td>海溝、島弧、火山帶</td><td>板塊聚合</td></tr><tr><td>裂谷、中洋脊</td><td>板塊張裂</td></tr></tbody></table></div></section>
 

@@ -316,7 +316,17 @@
   .card-mini{ background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:0.7rem 0.9rem; font-size:0.92rem; }
   .card-mini b{ display:block; font-family:var(--f-display); font-size:1rem; margin-bottom:0.2rem; }
 </style>
-</head>
+<style>
+  .bp-strip{ margin:0 0 1.2rem; display:grid; gap:0.35rem; }
+  .bp-strip .lab{ font-family:var(--f-mono); font-size:0.72rem; letter-spacing:0.05em; color:var(--ink-muted); }
+  .bp-strip .lab a{ color:var(--accent); text-decoration:none; }
+  .bp-row{ display:flex; flex-wrap:wrap; gap:0.25rem; align-items:center; font-size:0.78rem; }
+  .bp-row a, .bp-row span.c{ text-decoration:none; color:var(--ink-muted); border:1px solid var(--line); background:var(--surface); border-radius:999px; padding:0.1rem 0.55rem; white-space:nowrap; }
+  .bp-row a:hover{ border-color:var(--accent); color:var(--accent); }
+  .bp-row .on{ background:var(--accent); color:var(--accent-ink) !important; border-color:var(--accent); font-weight:700; }
+  .bp-row i{ font-style:normal; color:var(--line); }
+  .bp-row .g{ font-family:var(--f-mono); font-size:0.7rem; color:var(--ink-muted); margin-right:0.15rem; }
+</style></head>
 <body>
 <div class="page">
 <a class="back" href="index.html">← 回到地理學習地圖</a>
@@ -325,6 +335,7 @@
   <h1>農業</h1>
   <p class="sub">第 6 週。農業是自然地理和人文地理的交會點：氣候決定能種什麼，市場、資本和技術決定怎麼種。</p>
 </header>
+<nav class="bp-strip" aria-label="藍圖位置"><span class="lab">藍圖位置：你現在在亮起來的那一格・<a href="blueprint.html">看完整藍圖 →</a></span><div class="bp-row"><span class="g">自然</span><a href="g-tools.html">1 位置</a><i>›</i><a href="g-climate.html">2 氣候</a><i>›</i><a href="g-landform.html">3 地形與水</a></div><div class="bp-row"><span class="g">人文</span><a href="h-population.html">4 人口與都市</a><i>›</i><a class="on" href="h-agri.html">5 農業</a><i>›</i><a href="h-industry.html">6 工業</a><i>›</i><a href="h-global.html">7 全球化</a></div><div class="bp-row"><span class="g">區域</span><a href="r-asia.html">季風亞洲</a><a href="r-dry.html">乾燥世界</a><a href="r-europe.html">歐洲與俄羅斯</a><a href="r-america.html">美洲與大洋洲</a></div></nav>
 <div class="lede"><p class="storylink" style="margin:0;font-size:0.9rem">故事版：先看 <a href="story-s6.html">第六季《人多了，要吃飯》</a>，再讀這份教材。</p><p>這一節回答一個問題：「為什麼同樣是種糧食，亞洲是一小塊田很多人，美國是一大片田很少人？」</p><ul class="toc"><li><a href="#p1"><b>1</b>區位因子</a></li><li><a href="#p2"><b>2</b>農業類型</a></li><li><a href="#p3"><b>3</b>農業議題</a></li><li><a href="#practice"><b>✎</b>練習</a></li></ul></div>
 <section class="part" id="p1"><span class="part-kicker">PART 1 ・ 區位因子</span><h2>自然條件先決定，人文條件再修正</h2><ol class="chron chain"><li class="turn"><span class="yr">自然</span><span class="ev">氣候、地形、土壤、水源<small>決定「能種什麼」：稻米需要高溫多雨，小麥較耐乾冷</small></span></li><li><span class="yr">人文</span><span class="ev">市場、交通、資本、技術、勞力、政策<small>決定「怎麼種」：勞力密集還是機械化，自給還是賣到市場</small></span></li><li class="turn"><span class="yr">杜能</span><span class="ev">距市場越遠，運費越高<small>近市場：易腐、笨重（蔬菜、牛奶）；遠市場：粗放、耐運輸（穀物、放牧）</small></span></li><li><span class="yr">變化</span><span class="ev">冷藏、交通進步、全球化<small>距離的限制變小，農產品可以跨國運送</small></span></li></ol><div class="table-wrap"><table><thead><tr><th>集約 vs 粗放</th><th>集約農業</th><th>粗放農業</th></tr></thead><tbody><tr><td>投入</td><td>單位面積投入大量勞力或資本</td><td>單位面積投入少</td></tr><tr><td>產量</td><td>單位面積產量高</td><td>單位面積產量低，但每人產量可能很高</td></tr><tr><td>例子</td><td>季風亞洲稻作、西北歐酪農</td><td>北美大平原小麥、澳洲放牧</td></tr></tbody></table></div></section><section class="part" id="p2"><span class="part-kicker">PART 2 ・ 農業類型</span><h2>七種類型一張表</h2><div class="table-wrap"><table><thead><tr><th>類型</th><th>特徵</th><th>分布</th></tr></thead><tbody><tr><td>自給式稻作</td><td>勞力密集、單位面積產量高，一年可多穫</td><td>季風亞洲：中國南方、印度、東南亞</td></tr><tr><td>游耕</td><td>砍伐燒林種植，地力衰退就遷移</td><td>熱帶雨林</td></tr><tr><td>游牧</td><td>隨水草遷移放牧</td><td>乾燥區、高原：西亞、蒙古、薩赫爾</td></tr><tr><td>商業性穀物</td><td>大面積、機械化，單位產量不高但每人產量高</td><td>北美大平原、烏克蘭、阿根廷、澳洲</td></tr><tr><td>酪農與混合農業</td><td>靠近都市市場，資本集約</td><td>西北歐、美國五大湖周圍</td></tr><tr><td>地中海型農業</td><td>夏乾種耐旱果樹（葡萄、橄欖），冬雨種小麥</td><td>地中海沿岸、加州</td></tr><tr><td>熱帶栽培業</td><td>單一作物、大規模、外資經營，產品外銷</td><td>東南亞（油棕、橡膠）、中南美（香蕉、咖啡）</td></tr></tbody></table></div></section><section class="part" id="p3"><span class="part-kicker">PART 3 ・ 農業議題</span><h2>產量提高了，問題也出現了</h2><div class="table-wrap"><table><thead><tr><th>議題</th><th>內容</th><th>影響</th></tr></thead><tbody><tr><td>綠色革命</td><td>高產品種＋化學肥料＋灌溉</td><td>糧食大增；但需要資本，貧富差距擴大，化肥與農藥污染</td></tr><tr><td>農業企業化</td><td>大企業掌握種子、加工、通路</td><td>效率提高，小農議價能力弱</td></tr><tr><td>糧食里程</td><td>食物從產地運到餐桌的距離</td><td>距離越長，運輸耗能與碳排越多</td></tr><tr><td>公平貿易</td><td>保證收購價格，扣除中間剝削</td><td>改善邊陲國家小農收入</td></tr></tbody></table></div></section>
 

@@ -316,7 +316,17 @@
   .card-mini{ background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:0.7rem 0.9rem; font-size:0.92rem; }
   .card-mini b{ display:block; font-family:var(--f-display); font-size:1rem; margin-bottom:0.2rem; }
 </style>
-</head>
+<style>
+  .bp-strip{ margin:0 0 1.2rem; display:grid; gap:0.35rem; }
+  .bp-strip .lab{ font-family:var(--f-mono); font-size:0.72rem; letter-spacing:0.05em; color:var(--ink-muted); }
+  .bp-strip .lab a{ color:var(--accent); text-decoration:none; }
+  .bp-row{ display:flex; flex-wrap:wrap; gap:0.25rem; align-items:center; font-size:0.78rem; }
+  .bp-row a, .bp-row span.c{ text-decoration:none; color:var(--ink-muted); border:1px solid var(--line); background:var(--surface); border-radius:999px; padding:0.1rem 0.55rem; white-space:nowrap; }
+  .bp-row a:hover{ border-color:var(--accent); color:var(--accent); }
+  .bp-row .on{ background:var(--accent); color:var(--accent-ink) !important; border-color:var(--accent); font-weight:700; }
+  .bp-row i{ font-style:normal; color:var(--line); }
+  .bp-row .g{ font-family:var(--f-mono); font-size:0.7rem; color:var(--ink-muted); margin-right:0.15rem; }
+</style></head>
 <body>
 <div class="page">
 <a class="back" href="index.html">← 回到地理學習地圖</a>
@@ -325,6 +335,7 @@
   <h1>圖表判讀四步驟</h1>
   <p class="sub">第 1 週，之後每週都用。學測地理題幾乎都附圖表或情境，先學會「怎麼讀」，再讀內容才有用。</p>
 </header>
+<nav class="bp-strip" aria-label="藍圖位置"><span class="lab">藍圖位置：工具課，整條鏈都用得到・<a href="blueprint.html">看完整藍圖 →</a></span><div class="bp-row"><span class="g">自然</span><a href="g-tools.html">1 位置</a><i>›</i><a href="g-climate.html">2 氣候</a><i>›</i><a href="g-landform.html">3 地形與水</a></div><div class="bp-row"><span class="g">人文</span><a href="h-population.html">4 人口與都市</a><i>›</i><a href="h-agri.html">5 農業</a><i>›</i><a href="h-industry.html">6 工業</a><i>›</i><a href="h-global.html">7 全球化</a></div><div class="bp-row"><span class="g">區域</span><a href="r-asia.html">季風亞洲</a><a href="r-dry.html">乾燥世界</a><a href="r-europe.html">歐洲與俄羅斯</a><a href="r-america.html">美洲與大洋洲</a></div></nav>
 <div class="lede"><p>這一節回答一個問題：「題目附了一張看不懂的圖，第一步該看哪裡？」</p><ul class="toc"><li><a href="#p1"><b>1</b>四步驟</a></li><li><a href="#p2"><b>2</b>常見圖表</a></li><li><a href="#p3"><b>3</b>線索速查</a></li><li><a href="#practice"><b>✎</b>練習</a></li></ul></div>
 <section class="part" id="p1"><span class="part-kicker">PART 1 ・ 四步驟</span><h2>每一張圖都照這個順序讀</h2><ol class="chron chain"><li class="turn"><span class="yr">① 標題</span><span class="ev">先看標題、單位、圖例<small>橫軸縱軸各是什麼？單位是 °C、mm、%、人？顏色代表什麼？</small></span></li><li><span class="yr">② 位置</span><span class="ev">定位：在哪裡？<small>緯度（決定冷熱）、海陸位置（決定乾濕）、南北半球、比例尺大小</small></span></li><li class="turn"><span class="yr">③ 規律</span><span class="ev">找極值、趨勢、分布、例外<small>最高最低在哪？上升還是下降？集中還是分散？哪一個不一樣？</small></span></li><li><span class="yr">④ 原因</span><span class="ev">用學過的因果鏈解釋，再回到題目<small>題目問的是「現象」「原因」還是「影響」？選項要對上同一件事</small></span></li></ol><div class="note"><b>最常失分的地方：</b>跳過第 ① 步。把雨量柱當成氣溫、把百分比當成人數，後面推理再好都會錯。</div></section><section class="part" id="p2"><span class="part-kicker">PART 2 ・ 常見圖表</span><h2>五種一定會遇到的圖</h2><div class="table-wrap"><table><thead><tr><th>圖表</th><th>先看什麼</th><th>再看什麼</th><th>常考結論</th></tr></thead><tbody><tr><td>氣候圖</td><td>最冷月、最暖月的氣溫</td><td>雨季在夏季還是冬季</td><td>氣候類型、南北半球（7 月熱是北半球）</td></tr><tr><td>人口金字塔</td><td>底部（幼年）寬窄</td><td>頂部（老年）比例</td><td>人口轉型階段、扶養負擔</td></tr><tr><td>等高線地形圖</td><td>等高線疏密</td><td>凸出方向</td><td>疏緩密陡；凸向低處是山脊、凸向高處是河谷</td></tr><tr><td>統計地圖</td><td>圖例的級距與顏色</td><td>高值集中在哪個區域</td><td>分布規律與區域差異</td></tr><tr><td>折線／長條圖</td><td>時間範圍與單位</td><td>轉折點出現在哪一年</td><td>轉折背後的事件或政策</td></tr></tbody></table></div><div class="step"><span class="step-tag">觀察</span><p>學測常把兩張圖放在一起，例如「氣候圖＋農業分布圖」。先各自讀懂，再找兩張圖的共同原因。</p></div></section><section class="part" id="p3"><span class="part-kicker">PART 3 ・ 線索速查</span><h2>看到這些字，就想到這個概念</h2><div class="step"><span class="step-tag rule">規律 → 題目線索</span></div><div class="table-wrap"><table><thead><tr><th>題目中出現</th><th>先想到</th></tr></thead><tbody><tr><td>迎風坡、背風坡、雨影</td><td>地形雨；背風面乾燥</td></tr><tr><td>大陸西岸、緯度 30–40 度、冬雨</td><td>地中海型氣候</td></tr><tr><td>沿岸涼流（冷流）</td><td>空氣穩定少雨，海岸沙漠</td></tr><tr><td>夏雨冬乾、海陸比熱</td><td>季風</td></tr><tr><td>門檻人口、服務範圍</td><td>中地理論</td></tr><tr><td>原料、市場、勞力、動力</td><td>工業區位</td></tr><tr><td>疊圖、環域</td><td>GIS 空間分析</td></tr></tbody></table></div></section>
 
