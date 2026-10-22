@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>70 分速成｜筱葳學測地理</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>[hidden]{display:none!important}</style>
+<style>
+  /* Layout: single reading column, PART sections in sequence, English passages set apart as "answer sheet" panels */
+  :root{
+    --bg:#F1F5F9;
+    --surface:#FFFFFF;
+    --surface-2:#E5ECF3;
+    --ink:#1B2733;
+    --ink-muted:#566676;
+    --line:#C9D6E3;
+    --accent:#2B6A99;
+    --accent-ink:#FFFFFF;
+    --accent-soft:#DCE9F4;
+    --amber:#E0973C;  --amber-ink:#3A2306;
+    --teal:#4E9C8C;   --teal-ink:#0B241F;
+    --bad:#B5483B;    --bad-soft:#F6E1DD;
+    --hl-ts:#D3E6F3;  --hl-sup:#DCE8F5;  --hl-ex:#F7E3C6;  --hl-cs:#E9DDF2;
+    --grid-line:rgba(43,106,153,0.07);
+    --shadow:0 1px 2px rgba(28,42,36,0.06), 0 8px 24px rgba(28,42,36,0.05);
+    --f-display:'Noto Serif TC','Songti TC','PMingLiU',serif;
+    --f-body:'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif;
+    --f-en:'Source Serif 4','Georgia','Times New Roman',serif;
+    --f-mono:'JetBrains Mono','Cascadia Code',ui-monospace,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0E1620; --surface:#15212D; --surface-2:#1A2836; --ink:#E5ECF3; --ink-muted:#93A4B6;
+      --line:#2A3A4C; --accent:#86BCE6; --accent-ink:#0B1A12; --accent-soft:#1B3248;
+      --amber:#C97E2E; --amber-ink:#2A1A05; --teal:#3E8776; --teal-ink:#E7F5F1;
+      --bad:#E48A7D; --bad-soft:#3A201C;
+      --hl-ts:#1F3D55; --hl-sup:#22334A; --hl-ex:#4A3519; --hl-cs:#3A2A48;
+      --grid-line:rgba(134,188,230,0.07);
+      --shadow:0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0E1620; --surface:#15212D; --surface-2:#1A2836; --ink:#E5ECF3; --ink-muted:#93A4B6;
+    --line:#2A3A4C; --accent:#86BCE6; --accent-ink:#0B1A12; --accent-soft:#1B3248;
+    --amber:#C97E2E; --amber-ink:#2A1A05; --teal:#3E8776; --teal-ink:#E7F5F1;
+    --bad:#E48A7D; --bad-soft:#3A201C;
+    --hl-ts:#1F3D55; --hl-sup:#22334A; --hl-ex:#4A3519; --hl-cs:#3A2A48;
+    --grid-line:rgba(134,188,230,0.07);
+    --shadow:0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+    color-scheme:dark;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:
+      repeating-linear-gradient(0deg, var(--grid-line) 0 1px, transparent 1px 32px),
+      repeating-linear-gradient(90deg, var(--grid-line) 0 1px, transparent 1px 32px),
+      var(--bg);
+    color:var(--ink);
+    font-family:var(--f-body);
+    font-size:17px;
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  @media (prefers-reduced-motion: reduce){ *{ scroll-behavior:auto !important; transition:none !important; } }
+  h1,h2,h3{ font-family:var(--f-display); font-weight:600; text-wrap:balance; margin:0; color:var(--ink); }
+  a{ color:var(--accent); }
+  p{ margin:0; }
+  :focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+  .mono{ font-family:var(--f-mono); font-variant-numeric:tabular-nums; }
+
+  .page{ max-width:780px; margin:0 auto; padding-inline:1.25rem; padding-block:0 5rem; }
+
+  .back{ display:inline-block; margin-top:1.6rem; font-size:0.85rem; color:var(--ink-muted); text-decoration:none; }
+  .back:hover{ color:var(--accent); }
+
+  .hero{ padding-block:2rem 1.6rem; display:grid; gap:0.9rem; }
+  .eyebrow{
+    justify-self:start;
+    font-family:var(--f-mono); font-size:0.78rem; letter-spacing:0.06em;
+    color:var(--accent); background:var(--accent-soft); border:1px solid var(--line);
+    padding:0.3rem 0.7rem; border-radius:4px;
+  }
+  .hero h1{ font-size:clamp(1.9rem,5vw,2.5rem); line-height:1.25; }
+  .hero .sub{ color:var(--ink-muted); font-size:1.03rem; max-width:640px; }
+
+  .lede{
+    background:var(--surface); border:1px solid var(--line); border-radius:10px;
+    padding:1.1rem 1.3rem; box-shadow:var(--shadow); display:grid; gap:0.9rem;
+  }
+  .toc{ display:flex; flex-wrap:wrap; gap:0.5rem; padding:0; margin:0; list-style:none; }
+  .toc a{
+    display:inline-flex; gap:0.45rem; align-items:center; text-decoration:none;
+    font-size:0.88rem; color:var(--ink); background:var(--surface-2); border:1px solid var(--line);
+    padding:0.25rem 0.75rem; border-radius:999px;
+  }
+  .toc a:hover{ border-color:var(--accent); color:var(--accent); }
+  .toc b{ font-family:var(--f-mono); color:var(--accent); font-weight:700; }
+
+  section.part{ margin-top:3.2rem; display:grid; gap:1.1rem; }
+  .part-kicker{ font-family:var(--f-mono); font-size:0.78rem; letter-spacing:0.08em; color:var(--accent); }
+  .part h2{ font-size:1.55rem; line-height:1.35; }
+  .part h3{ font-size:1.08rem; margin-top:0.4rem; }
+
+  .step{ display:grid; gap:0.5rem; }
+  .step-tag{
+    justify-self:start; font-family:var(--f-mono); font-size:0.72rem; font-weight:700;
+    padding:0.1rem 0.55rem; border-radius:4px; background:var(--surface-2); color:var(--ink-muted); border:1px solid var(--line);
+  }
+  .step-tag.rule{ background:var(--accent); color:var(--accent-ink); border-color:var(--accent); }
+
+  .prompt{
+    background:var(--surface); border:1px solid var(--line); border-left:4px solid var(--amber);
+    border-radius:6px; padding:0.9rem 1.1rem; font-size:0.95rem;
+  }
+  .prompt .label{ font-family:var(--f-mono); font-size:0.72rem; color:var(--amber); font-weight:700; letter-spacing:0.05em; display:block; margin-bottom:0.2rem; }
+
+  .sheet{
+    background:var(--surface); border:1px solid var(--line); border-radius:8px;
+    padding:1rem 1.2rem; box-shadow:var(--shadow);
+    font-family:var(--f-en); font-size:1.06rem; line-height:1.85;
+  }
+  .sheet p + p{ margin-top:0.8rem; }
+  .sheet-head{
+    display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:0.3rem 1rem;
+    font-family:var(--f-mono); font-size:0.75rem; color:var(--ink-muted); margin-bottom:0.5rem;
+  }
+  .sheet.weak{ border-color:var(--bad); }
+  .sheet .err{ text-decoration:underline wavy var(--bad); text-underline-offset:4px; }
+
+  .compare{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:0.9rem; }
+  .compare > *{ min-width:0; }
+
+  .note{
+    background:var(--accent-soft); border:1px solid var(--line); border-radius:8px;
+    padding:0.8rem 1rem; font-size:0.93rem;
+  }
+
+  .table-wrap{ overflow-x:auto; border:1px solid var(--line); border-radius:8px; background:var(--surface); }
+  table{ border-collapse:collapse; width:100%; font-size:0.92rem; min-width:520px; }
+  th,td{ text-align:left; padding:0.6rem 0.85rem; border-bottom:1px solid var(--line); vertical-align:top; }
+  th{ background:var(--surface-2); font-weight:700; font-size:0.85rem; }
+  tr:last-child td{ border-bottom:none; }
+  td.en{ font-family:var(--f-en); font-size:1rem; }
+
+  /* score band bar, drawn to scale 0–20 */
+  .bands{ display:grid; gap:0.4rem; }
+  .band-bar{ display:flex; gap:2px; border-radius:6px; overflow:hidden; height:40px; }
+  .band-bar div{ display:flex; flex-direction:column; align-items:center; justify-content:center; line-height:1.15; font-size:0.78rem; font-weight:700; }
+  .band-bar small{ font-family:var(--f-mono); font-weight:400; font-size:0.68rem; }
+  .b0{ background:var(--bad-soft); color:var(--bad); }
+  .b1{ background:var(--surface-2); color:var(--ink-muted); }
+  .b2{ background:var(--hl-sup); color:var(--ink); }
+  .b3{ background:var(--hl-ts); color:var(--ink); }
+  .b4{ background:var(--accent); color:var(--accent-ink); }
+  .band-scale{ display:flex; justify-content:space-between; font-family:var(--f-mono); font-size:0.7rem; color:var(--ink-muted); }
+
+  /* paragraph anatomy */
+  .anatomy-ctrl{ display:flex; flex-wrap:wrap; gap:0.5rem 1rem; align-items:center; }
+  button.toggle{
+    font:inherit; font-size:0.88rem; cursor:pointer;
+    background:var(--accent); color:var(--accent-ink); border:none; border-radius:6px; padding:0.4rem 0.9rem;
+  }
+  button.toggle[aria-pressed="false"]{ background:var(--surface); color:var(--accent); border:1px solid var(--accent); }
+  .key{ display:flex; flex-wrap:wrap; gap:0.3rem 0.9rem; font-size:0.82rem; color:var(--ink-muted); }
+  .key span{ display:inline-flex; align-items:center; gap:0.35rem; }
+  .key i{ width:12px; height:12px; border-radius:3px; display:inline-block; }
+  .anatomy.on .ts{ background:var(--hl-ts); }
+  .anatomy.on .sup{ background:var(--hl-sup); }
+  .anatomy.on .ex{ background:var(--hl-ex); }
+  .anatomy.on .cs{ background:var(--hl-cs); }
+  .anatomy .ts,.anatomy .sup,.anatomy .ex,.anatomy .cs{ border-radius:3px; padding:0 2px; transition:background .2s ease; box-decoration-break:clone; -webkit-box-decoration-break:clone; }
+  .anatomy .tr{ font-weight:600; }
+  .anatomy.on .tr{ color:var(--accent); }
+
+  .skeleton{ display:grid; gap:0.4rem; counter-reset:sk; }
+  .skeleton div{
+    display:grid; grid-template-columns:7.5rem 1fr; gap:0.8rem; align-items:baseline;
+    padding:0.55rem 0.9rem; border-radius:6px; font-size:0.92rem;
+  }
+  .skeleton div > *{ min-width:0; }
+  .skeleton b{ font-size:0.86rem; }
+  @media (max-width:480px){ .skeleton div{ grid-template-columns:1fr; gap:0.1rem; } }
+
+  ul.clean{ margin:0; padding-left:1.2rem; display:grid; gap:0.3rem; }
+
+  .timeline{ display:flex; gap:2px; border-radius:6px; overflow:hidden; height:46px; }
+  .timeline div{ display:flex; flex-direction:column; justify-content:center; align-items:center; font-size:0.78rem; font-weight:700; line-height:1.15; text-align:center; padding:0 0.2rem; }
+  .timeline small{ font-family:var(--f-mono); font-weight:400; font-size:0.68rem; }
+
+  .checklist{ display:grid; gap:0.35rem; }
+  .checklist label{ display:flex; gap:0.6rem; align-items:flex-start; font-size:0.93rem; cursor:pointer; }
+  .checklist input{ margin-top:0.45rem; accent-color:var(--accent); }
+
+  /* practice */
+  .practice{ margin-top:3.2rem; display:grid; gap:1rem; }
+  .qcard{ background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:1rem 1.2rem; display:grid; gap:0.6rem; }
+  .qhead{ display:flex; gap:0.6rem; align-items:baseline; }
+  .qnum{ font-family:var(--f-mono); font-weight:700; color:var(--accent); flex:none; }
+  .qcard .en{ font-family:var(--f-en); font-size:1.02rem; }
+  .opts{ margin:0; padding-left:1.4rem; font-family:var(--f-en); font-size:1rem; display:grid; gap:0.15rem; }
+  details{ border-top:1px dashed var(--line); padding-top:0.5rem; }
+  summary{ cursor:pointer; color:var(--accent); font-size:0.88rem; font-weight:500; }
+  details .ans{ margin-top:0.5rem; font-size:0.93rem; }
+
+  /* draft box */
+  .draft{ display:grid; gap:0.6rem; }
+  textarea{
+    width:100%; min-height:260px; resize:vertical;
+    font-family:var(--f-en); font-size:1.02rem; line-height:1.75;
+    background:var(--surface); color:var(--ink); border:1px solid var(--line); border-radius:8px; padding:0.9rem 1rem;
+  }
+  textarea:focus{ outline:2px solid var(--accent); outline-offset:1px; }
+  .meters{ display:flex; flex-wrap:wrap; gap:0.5rem; }
+  .meter{ font-family:var(--f-mono); font-size:0.8rem; padding:0.25rem 0.7rem; border-radius:999px; border:1px solid var(--line); background:var(--surface-2); color:var(--ink-muted); }
+  .meter.ok{ background:var(--accent); color:var(--accent-ink); border-color:var(--accent); }
+  .meter.warn{ background:var(--amber); color:var(--amber-ink); border-color:var(--amber); }
+
+  footer{ margin-top:3rem; padding-top:1.5rem; border-top:1px solid var(--line); color:var(--ink-muted); font-size:0.85rem; display:grid; gap:0.4rem; }
+  footer .id{ font-family:var(--f-mono); font-size:0.8rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem; }
+</style>
+<style>
+  .wt td.zh{ transition:filter .2s ease, opacity .2s ease; }
+  .masked td.zh{ filter:blur(6px); opacity:.55; user-select:none; }
+  .masked td.zh:hover,.masked td.zh:focus{ filter:none; opacity:1; }
+  .tools{ display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; font-size:0.85rem; color:var(--ink-muted); }
+  .pair{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:0.8rem; }
+  .pair > *{ min-width:0; }
+  .ex-line{ font-family:var(--f-en); font-size:1.02rem; }
+  .ex-line + .ex-line{ margin-top:0.3rem; }
+  .ok{ color:var(--accent); font-weight:600; }
+  .no{ color:var(--bad); text-decoration:line-through; text-decoration-thickness:1px; }
+  .hl{ background:var(--hl-ex); border-radius:3px; padding:0 2px; }
+  .hl2{ background:var(--hl-ts); border-radius:3px; padding:0 2px; }
+  .hl3{ background:var(--hl-sup); border-radius:3px; padding:0 2px; }
+  .formula{ background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:0.8rem 1.1rem; font-family:var(--f-mono); font-size:0.9rem; line-height:1.9; overflow-x:auto; }
+</style>
+<style>
+  .opt-list{ display:grid; gap:0.4rem; }
+  .opt-btn{
+    display:block; width:100%; text-align:left; cursor:pointer;
+    font-family:var(--f-en); font-size:1rem; line-height:1.5; color:var(--ink);
+    background:var(--surface-2); border:1px solid var(--line); border-radius:6px; padding:0.45rem 0.8rem;
+  }
+  .opt-btn:hover{ border-color:var(--accent); }
+  .opt-btn.right{ background:var(--accent); color:var(--accent-ink); border-color:var(--accent); }
+  .opt-btn.wrong{ background:var(--bad-soft); color:var(--bad); border-color:var(--bad); }
+  .opt-btn:disabled{ cursor:default; }
+  .scorebar{ display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; font-size:0.9rem; color:var(--ink-muted); }
+  .scorebar .meter{ font-size:0.85rem; }
+  .passage{ background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:1rem 1.2rem; font-family:var(--f-en); font-size:1.04rem; line-height:1.9; box-shadow:var(--shadow); }
+  .passage p + p{ margin-top:0.7rem; }
+  .blank{ font-family:var(--f-mono); font-size:0.85rem; font-weight:700; color:var(--accent); background:var(--accent-soft); border-radius:4px; padding:0 0.35rem; }
+  .optgrid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:0.4rem; font-family:var(--f-en); }
+  .optgrid span{ background:var(--surface-2); border:1px solid var(--line); border-radius:6px; padding:0.3rem 0.6rem; }
+  .fill{ width:100%; font:inherit; font-family:var(--f-en); background:var(--surface); color:var(--ink); border:1px solid var(--line); border-radius:6px; padding:0.4rem 0.6rem; }
+  .fill:focus{ outline:2px solid var(--accent); outline-offset:1px; }
+  .panels{ display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:0.6rem; }
+  .panel{ background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:0.7rem 0.8rem; font-size:0.9rem; }
+  .panel b{ font-family:var(--f-mono); color:var(--accent); display:block; font-size:0.78rem; }
+  .log-form{ display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:0.6rem; align-items:end; }
+  .log-form label{ display:grid; gap:0.2rem; font-size:0.82rem; color:var(--ink-muted); }
+  select.fill{ appearance:auto; }
+</style>
+<style>
+  .chk-row{ display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; }
+  textarea.ans-in{ min-height:0; resize:vertical; font-size:1rem; line-height:1.6; padding:0.5rem 0.7rem; }
+  .verdict{ font-size:0.9rem; display:grid; gap:0.35rem; }
+  .verdict:empty{ display:none; }
+  .vd{ display:inline-block; font-weight:700; font-size:0.85rem; padding:0.1rem 0.6rem; border-radius:999px; }
+  .vd.good{ background:var(--accent); color:var(--accent-ink); }
+  .vd.bad{ background:var(--bad-soft); color:var(--bad); }
+  .vd.warn{ background:var(--surface-2); color:var(--ink-muted); }
+  .dx{ display:grid; gap:0.25rem; font-family:var(--f-en); font-size:1rem; background:var(--surface-2); border-radius:6px; padding:0.5rem 0.75rem; }
+  .dx b{ font-family:var(--f-body); font-size:0.75rem; color:var(--ink-muted); display:inline-block; min-width:4.5rem; }
+  .dx-bad{ color:var(--bad); text-decoration:underline wavy var(--bad); text-underline-offset:3px; }
+  .dx-good{ color:var(--accent); font-weight:600; text-decoration:underline; text-underline-offset:3px; }
+  .dx-note{ font-size:0.8rem; color:var(--ink-muted); }
+  td .verdict{ margin-top:0.3rem; }
+</style>
+<style>
+  /* history additions: vertical chronology, primary-source boxes */
+  .chron{ list-style:none; margin:0.8rem 0 0; padding:0 0 0 0.2rem; display:grid; gap:0; }
+  .chron li{ display:grid; grid-template-columns:5.6rem 1fr; gap:0.9rem; position:relative; padding:0.35rem 0 0.55rem; }
+  .chron li > *{ min-width:0; }
+  .chron li::before{ content:''; position:absolute; left:6.05rem; top:0; bottom:0; width:2px; background:var(--line); }
+  .chron li::after{ content:''; position:absolute; left:calc(6.05rem - 4px); top:0.85rem; width:10px; height:10px; border-radius:50%; background:var(--surface); border:2px solid var(--accent); }
+  .chron li.turn::after{ background:var(--accent); }
+  .chron .yr{ font-family:var(--f-mono); font-variant-numeric:tabular-nums; font-size:0.82rem; font-weight:700; color:var(--accent); text-align:right; padding-top:0.15rem; }
+  .chron .ev{ padding-left:0.9rem; font-size:0.95rem; line-height:1.65; }
+  .chron .ev small{ display:block; color:var(--ink-muted); font-size:0.82rem; }
+  @media (max-width:480px){
+    .chron li{ grid-template-columns:4.4rem 1fr; gap:0.6rem; }
+    .chron li::before{ left:4.75rem; } .chron li::after{ left:calc(4.75rem - 4px); }
+  }
+  .src{ background:var(--surface-2); border:1px solid var(--line); border-left:4px solid var(--amber); border-radius:6px; padding:0.7rem 1rem; font-family:var(--f-display); font-size:1rem; line-height:1.85; margin:0; }
+  .src cite{ display:block; font-style:normal; font-family:var(--f-body); font-size:0.78rem; color:var(--ink-muted); margin-top:0.3rem; }
+  .qcard .qtext{ margin:0; }
+  textarea.fill{ font-family:var(--f-body); }
+  .kwtag{ font-family:var(--f-mono); font-size:0.75rem; background:var(--accent-soft); color:var(--accent); border:1px solid var(--line); border-radius:4px; padding:0.05rem 0.4rem; white-space:nowrap; }
+</style>
+
+<style>
+  /* geography additions */
+  .chain .yr{ font-family:var(--f-body); font-size:0.8rem; }
+  .fig{ background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:0.8rem 1rem; box-shadow:var(--shadow); display:grid; gap:0.4rem; }
+  .fig svg{ width:100%; height:auto; display:block; }
+  .fig figcaption{ font-size:0.82rem; color:var(--ink-muted); }
+  .fig text{ font-family:var(--f-body); }
+  .twocol{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:0.8rem; }
+  .twocol > *{ min-width:0; }
+  .card-mini{ background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:0.7rem 0.9rem; font-size:0.92rem; }
+  .card-mini b{ display:block; font-family:var(--f-display); font-size:1rem; margin-bottom:0.2rem; }
+</style>
+<style>
+  .bp-strip{ margin:0 0 1.2rem; display:grid; gap:0.35rem; }
+  .bp-strip .lab{ font-family:var(--f-mono); font-size:0.72rem; letter-spacing:0.05em; color:var(--ink-muted); }
+  .bp-strip .lab a{ color:var(--accent); text-decoration:none; }
+  .bp-row{ display:flex; flex-wrap:wrap; gap:0.25rem; align-items:center; font-size:0.78rem; }
+  .bp-row a, .bp-row span.c{ text-decoration:none; color:var(--ink-muted); border:1px solid var(--line); background:var(--surface); border-radius:999px; padding:0.1rem 0.55rem; white-space:nowrap; }
+  .bp-row a:hover{ border-color:var(--accent); color:var(--accent); }
+  .bp-row .on{ background:var(--accent); color:var(--accent-ink) !important; border-color:var(--accent); font-weight:700; }
+  .bp-row i{ font-style:normal; color:var(--line); }
+  .bp-row .g{ font-family:var(--f-mono); font-size:0.7rem; color:var(--ink-muted); margin-right:0.15rem; }
+</style></head>
+
+<style>
+  .f70-share{ display:flex; flex-wrap:wrap; gap:0.5rem 1rem; align-items:center; margin:0 0 1.2rem; font-size:0.9rem; color:var(--ink-muted); }
+  .f70-share b{ color:var(--accent); font-family:'JetBrains Mono',monospace; }
+  .why{ background:var(--accent-soft); border:1px solid var(--line); border-radius:8px; padding:0.9rem 1.1rem; margin:0 0 1.4rem; }
+  .why p{ margin:0; }
+  .why p + p{ margin-top:0.5rem; }
+  .move{ background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:1rem 1.2rem 1.1rem; margin:0 0 1rem; box-shadow:var(--shadow); }
+  .move h3{ font-size:1.08rem; line-height:1.45; display:flex; gap:0.6rem; align-items:baseline; }
+  .move h3 .mn{ flex:none; font-family:'JetBrains Mono',monospace; font-size:0.78rem; font-weight:700; color:var(--accent-ink); background:var(--accent); border-radius:4px; padding:0.1rem 0.45rem; }
+  .move .trig{ margin:0.6rem 0 0.5rem; font-size:0.9rem; color:var(--ink-muted); }
+  .move .trig b{ color:var(--b2); font-weight:700; }
+  .move ol{ margin:0.2rem 0 0.6rem; padding-left:1.3rem; }
+  .move ol li{ margin:0.15rem 0; }
+  .exrow{ display:flex; flex-wrap:wrap; gap:0.4rem; align-items:center; }
+  .exrow .k{ font-size:0.78rem; color:var(--ink-muted); margin-right:0.2rem; }
+  a.chip{ display:inline-flex; gap:0.35rem; align-items:baseline; font-size:0.82rem; text-decoration:none; color:var(--ink); background:var(--surface-2); border:1px solid var(--line); border-radius:999px; padding:0.15rem 0.65rem; }
+  a.chip b{ font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--accent); }
+  a.chip:hover{ border-color:var(--accent); }
+  .vtab td:first-child{ color:var(--ink-muted); }
+  .vtab td:last-child{ font-weight:700; }
+  .donebar{ display:flex; flex-wrap:wrap; gap:0.8rem; align-items:center; justify-content:space-between; background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:0.9rem 1.2rem; margin:1.6rem 0 0; box-shadow:var(--shadow); }
+  .donebtn{ font:inherit; font-size:0.92rem; cursor:pointer; border:1px solid var(--accent); color:var(--accent); background:var(--surface); border-radius:999px; padding:0.35rem 1rem; }
+  .donebtn[aria-pressed="true"]{ background:var(--accent); color:var(--accent-ink); }
+  .pager{ display:flex; justify-content:space-between; gap:1rem; margin:1.2rem 0 0; font-size:0.92rem; }
+  .pager a{ text-decoration:none; }
+  .mantra{ list-style:none; padding:0; margin:0; counter-reset:m; }
+  .mantra li{ counter-increment:m; padding:0.45rem 0 0.45rem 2.2rem; position:relative; border-bottom:1px dashed var(--line); }
+  .mantra li:last-child{ border-bottom:0; }
+  .mantra li::before{ content:counter(m); position:absolute; left:0; top:0.5rem; width:1.5rem; height:1.5rem; border-radius:50%; background:var(--accent-soft); color:var(--accent); font-family:'JetBrains Mono',monospace; font-size:0.8rem; font-weight:700; display:flex; align-items:center; justify-content:center; }
+</style>
+
+<style>
+  .stats-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:0.9rem; margin:0 0 2.2rem; }
+  .stat-tile{ background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:1rem 1.1rem; box-shadow:var(--shadow); }
+  .stat-num{ font-family:'JetBrains Mono',monospace; font-size:1.85rem; font-weight:700; color:var(--accent); font-variant-numeric:tabular-nums; line-height:1; }
+  .stat-num.muted{ color:var(--ink); }
+  .stat-of{ font-size:1rem; color:var(--ink-muted); font-weight:500; }
+  .stat-label{ font-size:0.82rem; color:var(--ink-muted); margin-top:0.4rem; line-height:1.5; }
+  .route th:nth-child(4), .route td:nth-child(4){ white-space:nowrap; }
+  .hbars{ display:grid; gap:0.35rem; margin:0.4rem 0 0.6rem; }
+  .hb{ display:grid; grid-template-columns:8.5em 1fr 6.2em; gap:0.6rem; align-items:center; font-size:0.88rem; }
+  .hbl{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .hbt{ background:var(--surface-2); border-radius:4px; height:16px; overflow:hidden; }
+  .hbt i{ display:block; height:100%; border-radius:4px; }
+  .hbt i.c{ background:var(--accent); }
+  .hbt i.o{ background:var(--line); }
+  .hbv{ font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--ink-muted); text-align:right; white-space:nowrap; }
+  .route td.n{ font-family:'JetBrains Mono',monospace; white-space:nowrap; }
+  .pill.prog{ cursor:pointer; font-family:'JetBrains Mono',monospace; font-size:0.72rem; padding:0.2rem 0.6rem; border-radius:999px; background:var(--surface); color:var(--ink-muted); border:1px solid var(--line); white-space:nowrap; }
+  .pill.prog[aria-pressed="true"]{ background:var(--accent); color:var(--accent-ink); border-color:var(--accent); }
+  .fcwrap{ display:grid; grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); gap:0.6rem; }
+  .fc{ font:inherit; text-align:left; cursor:pointer; background:var(--surface); color:var(--ink); border:1px solid var(--line); border-radius:8px; padding:0.7rem 0.85rem; min-height:5.2rem; display:flex; flex-direction:column; gap:0.3rem; box-shadow:var(--shadow); }
+  .fc .ft{ font-weight:700; }
+  .fc .fd{ font-size:0.86rem; color:var(--ink-muted); line-height:1.55; visibility:hidden; }
+  .fc[aria-pressed="true"]{ border-color:var(--accent); background:var(--accent-soft); }
+  .fc[aria-pressed="true"] .fd{ visibility:visible; color:var(--ink); }
+  .fcbar{ display:flex; flex-wrap:wrap; gap:0.6rem; margin:0 0 0.8rem; }
+  .steps4{ counter-reset:s; list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:0.6rem; }
+  .steps4 li{ counter-increment:s; background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:0.7rem 0.85rem; font-size:0.92rem; }
+  .steps4 li::before{ content:'第 ' counter(s) ' 步'; display:block; font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--accent); font-weight:700; }
+  .prog-line{ font-family:'JetBrains Mono',monospace; font-size:0.9rem; color:var(--accent); font-weight:700; }
+</style>
+<body>
+<div class="page">
+<a class="back" href="index.html">← 回到地理學習地圖</a>
+<header class="hero">
+<span class="eyebrow">70分速成</span>
+<h1>地理 70 分速成</h1>
+<p class="sub">目標：學測地理題答對七成。把 111–115 學測 105 題地理題的分數一題一題加起來，六個單元就佔了 165 / 234 分（71%）。先把這六個單元的「得分招式」練熟，再用一課補地形和區域的必考點，八課走完就夠了。</p>
+</header>
+<div class="stats-grid">
+<div class="stat-tile"><div class="stat-num">71%</div><div class="stat-label">六個核心單元<br>佔歷屆地理分數</div></div>
+<div class="stat-tile"><div class="stat-num muted">8</div><div class="stat-label">課，每課約 40 分鐘<br>一週一課</div></div>
+<div class="stat-tile"><div class="stat-num muted">45</div><div class="stat-label">個得分招式<br>每招附歷屆題</div></div>
+<div class="stat-tile"><div class="stat-num"><span id="pDone">0</span><span class="stat-of">/8</span></div><div class="stat-label">我已完成的課</div></div>
+</div>
+<section class="part"><span class="part-kicker">為什麼是這八課</span><h2>五年歷屆題，分數都落在哪裡</h2>
+<p>每一列是一個單元在 111–115 學測地理題中的總分。藍色六個單元是速成的主力；灰色的地形、水文與四個區域加起來不少，但分散在很多小主題，第 8 課只挑重複考過的點。</p>
+<div class="hbars" role="img" aria-label="111–115 學測地理各單元分數"><div class="hb"><span class="hbl">地理技能</span><span class="hbt"><i class="c" style="width:100.0%"></i></span><span class="hbv">44 分・19%</span></div><div class="hb"><span class="hbl">人口與聚落</span><span class="hbt"><i class="c" style="width:72.7%"></i></span><span class="hbv">32 分・14%</span></div><div class="hb"><span class="hbl">工業與服務業</span><span class="hbt"><i class="c" style="width:65.9%"></i></span><span class="hbv">29 分・12%</span></div><div class="hb"><span class="hbl">全球化與區域發展</span><span class="hbt"><i class="c" style="width:47.7%"></i></span><span class="hbv">21 分・9%</span></div><div class="hb"><span class="hbl">天氣與氣候</span><span class="hbt"><i class="c" style="width:45.5%"></i></span><span class="hbv">20 分・9%</span></div><div class="hb"><span class="hbl">農業</span><span class="hbt"><i class="c" style="width:43.2%"></i></span><span class="hbv">19 分・8%</span></div><div class="hb"><span class="hbl">地形</span><span class="hbt"><i class="o" style="width:36.4%"></i></span><span class="hbv">16 分・7%</span></div><div class="hb"><span class="hbl">季風亞洲</span><span class="hbt"><i class="o" style="width:29.5%"></i></span><span class="hbv">13 分・6%</span></div><div class="hb"><span class="hbl">美洲與大洋洲</span><span class="hbt"><i class="o" style="width:27.3%"></i></span><span class="hbv">12 分・5%</span></div><div class="hb"><span class="hbl">西亞北非與漠南非洲</span><span class="hbt"><i class="o" style="width:22.7%"></i></span><span class="hbv">10 分・4%</span></div><div class="hb"><span class="hbl">水文與生態</span><span class="hbt"><i class="o" style="width:22.7%"></i></span><span class="hbv">10 分・4%</span></div><div class="hb"><span class="hbl">歐洲與俄羅斯</span><span class="hbt"><i class="o" style="width:18.2%"></i></span><span class="hbv">8 分・3%</span></div></div>
+<p style="font-size:0.85rem;color:var(--ink-muted)">統計：111–115 學測社會考科中屬於地理的 105 題，共 234 分（以本站歷屆試題練習的分類為準，每題只歸一個單元）。</p>
+</section>
+<section class="part"><span class="part-kicker">路線</span><h2>八課，一週一課</h2>
+<p class="prog-line" id="pLine"></p>
+<div class="table-wrap"><table class="route"><thead><tr><th>#</th><th>課・建議週次・分數・進度</th></tr></thead><tbody><tr><td class="n">1</td><td><a href="f70-1.html">讀地圖：方位、等高線、通視</a><br><small style="color:var(--ink-muted)">10/26–11/1・與第 2 課合計 44 分</small>　<button class="pill prog" type="button" aria-pressed="false" data-n="1">未完成</button></td></tr><tr><td class="n">2</td><td><a href="f70-2.html">GIS 與研究方法：該用哪一招</a><br><small style="color:var(--ink-muted)">11/2–11/8・地理技能</small>　<button class="pill prog" type="button" aria-pressed="false" data-n="2">未完成</button></td></tr><tr><td class="n">3</td><td><a href="f70-3.html">人口與聚落：人往哪裡走、城市怎麼長</a><br><small style="color:var(--ink-muted)">11/9–11/15・32 分</small>　<button class="pill prog" type="button" aria-pressed="false" data-n="3">未完成</button></td></tr><tr><td class="n">4</td><td><a href="f70-4.html">工業與服務業：工廠設在哪、廠商怎麼連</a><br><small style="color:var(--ink-muted)">11/16–11/22・29 分</small>　<button class="pill prog" type="button" aria-pressed="false" data-n="4">未完成</button></td></tr><tr><td class="n">5</td><td><a href="f70-5.html">全球化與區域發展：核心、邊陲與互賴</a><br><small style="color:var(--ink-muted)">11/23–11/29・21 分</small>　<button class="pill prog" type="button" aria-pressed="false" data-n="5">未完成</button></td></tr><tr><td class="n">6</td><td><a href="f70-6.html">天氣與氣候：讀氣候圖、認識風</a><br><small style="color:var(--ink-muted)">11/30–12/6・20 分</small>　<button class="pill prog" type="button" aria-pressed="false" data-n="6">未完成</button></td></tr><tr><td class="n">7</td><td><a href="f70-7.html">農業：種什麼、怎麼種、為什麼這樣種</a><br><small style="color:var(--ink-muted)">12/7–12/13・19 分</small>　<button class="pill prog" type="button" aria-pressed="false" data-n="7">未完成</button></td></tr><tr><td class="n">8</td><td><a href="f70-8.html">地形、水文與區域必記</a><br><small style="color:var(--ink-muted)">12/14–12/20・69 分</small>　<button class="pill prog" type="button" aria-pressed="false" data-n="8">未完成</button></td></tr></tbody></table></div>
+<p style="font-size:0.85rem;color:var(--ink-muted)">12/21 以後：寫 <a href="past-papers.html">111–115 歷屆題</a>，每份限時、訂正、記錯題本；考前一週只看各課口訣與下面的名詞卡。</p>
+</section>
+<section class="part"><span class="part-kicker">每天怎麼讀</span><h2>一課 40 分鐘的固定流程</h2>
+<ol class="steps4"><li>讀「看到這些就用」，圈出觸發字（5 分鐘）</li><li>讀步驟，點一題歷屆題實際寫（20 分鐘）</li><li>做練習題，最多錯一題才過關（10 分鐘）</li><li>抄下本課口訣，錯題記進錯題本（5 分鐘）</li></ol>
+</section>
+<section class="part"><span class="part-kicker">考場上</span><h2>讀題四步</h2>
+<ol class="steps4"><li>先讀最後一句問句：選正確還是錯誤？問原因還是結果？</li><li>圈題幹裡的地名、時間、數字、關鍵名詞</li><li>有圖先看標題、座標軸單位、圖例、指北針</li><li>把題幹描述對到名詞卡，刪掉絕對字眼的選項</li></ol>
+<p style="margin-top:0.8rem">陌生的時事（堰塞湖、關稅、海峽封鎖）不用怕，題目考的一定是課本概念。問自己：「這是哪一課的哪一招？」</p>
+</section>
+<section class="part" id="cards"><span class="part-kicker">名詞速配卡</span><h2>40 張卡，考前每天翻一輪</h2>
+<p>看名詞，先在心裡說出意思，再點卡片翻開確認。全部說得出來，選擇題的名詞題就不會錯。</p>
+<div class="fcbar"><button class="toggle" type="button" id="fcAll" aria-pressed="false">全部翻開</button><button class="toggle" type="button" id="fcShuffle" aria-pressed="false">打亂順序</button></div>
+<div class="fcwrap" id="fcwrap"><button class="fc" type="button" aria-pressed="false"><span class="ft">環域分析</span><span class="fd">以某點或線為中心，畫出一定距離內的範圍</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">疊圖分析</span><span class="fd">把多個條件圖層重疊，找出同時符合的地方</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">遙測</span><span class="fd">用衛星、空拍取得影像，可比較不同時間的地表</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">自願性地理資訊</span><span class="fd">一般民眾自己上傳、協作的空間資料</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">解析度</span><span class="fd">影像能分辨的最小尺寸，數字越小越清楚</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">大比例尺</span><span class="fd">範圍小、內容詳細（如 1:5,000）</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">山谷（等高線）</span><span class="fd">等高線 V 字尖端指向高處</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">山脊（等高線）</span><span class="fd">等高線 V 字尖端指向低處</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">通視</span><span class="fd">兩點連線中間沒有更高的地形擋住</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">方位角</span><span class="fd">從正北 0° 順時針算，東 90°、南 180°、西 270°</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">人口轉型擴張階段</span><span class="fd">死亡率下降、出生率仍高，人口快速增加</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">低穩定階段</span><span class="fd">出生率與死亡率都低</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">過度都市化</span><span class="fd">都市人口多，工作與經濟發展跟不上</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">推拉理論</span><span class="fd">原居地的推力＋目的地的拉力造成遷移</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">商閾</span><span class="fd">維持一家店營運所需的最低需求</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">商品圈</span><span class="fd">顧客願意前往購買的最遠範圍</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">中地等級</span><span class="fd">等級越高，提供的服務越高級、市場區域越大</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">環境負載力</span><span class="fd">一地資源能養活的人口或生物上限</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">動力要素</span><span class="fd">能源，如電力、水力、地熱</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">勞力密集產業</span><span class="fd">需要大量人工的產業，如紡織、成衣</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">聚集經濟</span><span class="fd">相關工廠集中在同一區，共享資源而降低成本</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">產業連鎖</span><span class="fd">上游供應下游，廠商彼此依存</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">垂直分工</span><span class="fd">同一產品的上下游階段分在不同國家</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">水平分工</span><span class="fd">各國生產同層級、不同種類的產品互相交換</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">知識經濟</span><span class="fd">以人才、研發、技術創造價值的經濟</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">核心</span><span class="fd">資本、技術、決策集中的地區</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">邊陲</span><span class="fd">提供原料與勞力、受核心控制的地區</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">全球化的挑戰</span><span class="fd">一地出事（疫情、戰爭、貿易戰）全球連鎖受害</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">區域互賴</span><span class="fd">一群國家合作開放、彼此依賴</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">循環經濟</span><span class="fd">資源回收再製，回到生產系統</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">西風帶</span><span class="fd">約緯度 30°–60° 的盛行西風</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">季風</span><span class="fd">風向隨季節反轉的風</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">狹管效應</span><span class="fd">風吹過窄的海峽或山谷而加速</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">溫帶季風氣候</span><span class="fd">夏雨冬乾、冬季寒冷</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">地中海型氣候</span><span class="fd">冬雨夏乾</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">區域生產專業化</span><span class="fd">一個地區集中生產某種產品</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">規模經濟</span><span class="fd">生產規模變大，單位成本降低</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">沖積扇</span><span class="fd">河流出山口、坡度變緩處的扇形堆積</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">基蝕坡</span><span class="fd">曲流外側，水流快、受侵蝕</span></button><button class="fc" type="button" aria-pressed="false"><span class="ft">荷莫茲海峽</span><span class="fd">波斯灣的出口，石油運輸要道</span></button></div>
+</section>
+<footer>
+<p>分數統計依 111–115 學年度學測社會考科的地理題（試題來源：大考中心）。練習題為教學自編。正式考試範圍以大考中心公告為準。</p>
+<div class="id"><span>筱葳學測地理</span><span>70 分速成</span></div>
+</footer>
+</div>
+<script>
+(function(){
+  var K='geo-f70-v1', d={};
+  try{ d=JSON.parse(localStorage.getItem(K)||'{}')||{}; }catch(e){ d={}; }
+  var btns=[].slice.call(document.querySelectorAll('.pill.prog'));
+  function show(){
+    var c=0;
+    btns.forEach(function(b){ var on=!!d[b.getAttribute('data-n')]; if(on)c++; b.setAttribute('aria-pressed',on?'true':'false'); b.textContent=on?'✓ 完成':'未完成'; });
+    document.getElementById('pDone').textContent=c;
+    var nx=btns.filter(function(b){return !d[b.getAttribute('data-n')];})[0];
+    document.getElementById('pLine').textContent = c===8 ? '八課都完成了，接下來寫歷屆題。' : '下一課：第 '+nx.getAttribute('data-n')+' 課';
+  }
+  btns.forEach(function(b){ b.addEventListener('click',function(){ var n=b.getAttribute('data-n'); if(d[n]) delete d[n]; else d[n]=1; try{ localStorage.setItem(K,JSON.stringify(d)); }catch(e){} show(); }); });
+  show();
+  var wrap=document.getElementById('fcwrap');
+  wrap.addEventListener('click',function(e){ var c=e.target.closest('.fc'); if(!c)return; c.setAttribute('aria-pressed', c.getAttribute('aria-pressed')==='true'?'false':'true'); });
+  var all=document.getElementById('fcAll');
+  all.addEventListener('click',function(){ var on=all.getAttribute('aria-pressed')!=='true'; all.setAttribute('aria-pressed',on?'true':'false'); all.textContent=on?'全部蓋起來':'全部翻開'; [].forEach.call(wrap.children,function(c){ c.setAttribute('aria-pressed',on?'true':'false'); }); });
+  document.getElementById('fcShuffle').addEventListener('click',function(){ var a=[].slice.call(wrap.children); for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t; } a.forEach(function(c){ c.setAttribute('aria-pressed','false'); wrap.appendChild(c); }); all.setAttribute('aria-pressed','false'); all.textContent='全部翻開'; });
+})();
+</script>
+</body>
+</html>
